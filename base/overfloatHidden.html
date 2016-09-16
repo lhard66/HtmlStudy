@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用overfloat:hidden清除浮动练习</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 500px;
+			border: 1px solid yellow;
+		}
+		.box ul{
+			list-style: none;			
+		}
+		.box ul li{
+			overflow: hidden;
+			line-height: 30px;
+			border-bottom: 1px dashed gray;
+		}
+		.box ul li span.title{
+			float: left;
+		}
+		.box ul li span.date{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li>
+				<span class="title">aaaaaaa</span>
+				<span class="date">2015-11-11</span>
+			</li>
+			<li>
+				<span class="title">ccccccc</span>
+				<span class="date">2015-11-11</span>
+			</li>
+			<li>
+				<span class="title">bbbbbbb</span>
+				<span class="date">2015-11-11</span>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
