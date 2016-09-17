@@ -16,28 +16,28 @@
 		}
 		.cl{
 			clear: both;
-			/*float: left;*/
+			float: left;
 		}
 		.header{
 			height: 58px;
 			background-color: #191D3A
 		}
-		.header .top{
+		.inner_c{
 			width: 1000px;
 			margin: 0 auto;			
 		}
-		.header .top .logo{
+		.header .logo{
 			float: left;
 			margin-right: 32px;
 		}
-		.header .top .nav{
+		.header .nav{
 			float: left;			
 			/*margin-left: 32px;*/
 		}
-		.header .top .nav ul{
+		.header .nav ul{
 			list-style: none;			
 		}
-		.header .top .nav ul li{
+		.header .nav ul li{
 			float: left;
 			width: 100px;
 			line-height: 58px;
@@ -45,37 +45,77 @@
 			color: #818496;
 			border-left: 1px solid #252947;
 		}
-		.header .top .nav ul li.last{
+		.header .nav ul li.last{
 			border-right: 1px solid #252947;
 		}
-		.header .top .nav ul li a{
+		.header .nav ul li a{
 			display: block;			
 			color: #818496;
 			text-decoration: none;
 		}
-		.header .top .nav ul li a.current{
+		.header .nav ul li a.current{
 			color: #E2E4ED;
 			background-color: #252947;
 		}
-		.header .top .nav ul li a:hover{
+		.header .nav ul li a:hover{
 			color: #E2E4ED;
 			background-color: #252947;	
 		}
-		.header .top .join{
+		.header .join{
 			float: left;
 			padding-top: 12px;
 			padding-left: 48px;
 		}
 		.banner{
 			height: 465px;
-			background: url(images/banner.jpg) no-repeat center top;
-			
+			background: url(images/banner.jpg) no-repeat center top;			
+		}
+		.content{
+			padding-top: 50px;
+		}
+		.content .product{
+			height: 229px;
+			border-bottom: 1px solid #DBE1E7;
+		}
+		.content .product ul{
+			list-style: none;
+		}
+		.content .product ul li{
+			float: left;
+			margin-right: 43px;
+		}
+		.content .product ul li img{
+			width: 218px;
+			height: 130px;
+		}
+		.content .product ul li.last{
+			/*width: 217px;*/
+			margin-right: 0;
+		}
+		.content .product ul li.last img{
+			width: 217px;
+		}
+		.content .product ul li h3{
+			text-align: center;
+			line-height: 39px;
+			font-size: 14px;
+		}
+		.content .product ul li p{
+			text-align: center;
+			font-size: 12px;		
+		}
+		.content .product ul li p a{
+			line-height: 12px;
+			color: #38B774;	
+			text-decoration: none;
+			padding-right: 11px;
+			background: url(images/sign.png) no-repeat right 5px;
 		}
 	</style>
 </head>
 <body>
 	<div class="header">
-		<div class="top">
+		<div class="inner_c">
 			<h1 class="logo"><img src="images/logo.png" alt="logo"></h1>
 			<div class="nav">
 				<div class="nav">
@@ -91,13 +131,38 @@
 			</div>		
 			<div class="join">
 				<a href="#">
-					<img src="images/join.png" alt="">					
+					<p><img src="images/join.png" alt=""></p>					
 				</a>
 			</div>
 		</div>
 	</div>
 	<div class="cl"></div>
 	<div class="banner"></div>
-	<div class="content"></div>
+	<div class="content inner_c">
+		<div class="product">
+			<ul>
+				<li>
+					<img src="images/p1.jpg" alt="">
+					<h3>BPT宣传片</h3>
+					<p><a href="#">点击播放</a></p>
+				</li>
+				<li>
+					<img src="images/p2.jpg" alt="">
+					<h3>博雅互动宣传视频</h3>
+					<p><a href="#">点击播放</a></p>
+				</li>
+				<li>
+					<img src="images/p3.jpg" alt="">
+					<h3>斗地主</h3>
+					<p><a href="#">点击播放</a></p>
+				</li>
+				<li class="last">
+					<img src="images/p4.jpg" alt="">
+					<h3>德州扑克</h3>
+					<p><a href="#">点击播放</a></p>
+				</li>
+			</ul>
+		</div>
+	</div>
 </body>
 </html>
