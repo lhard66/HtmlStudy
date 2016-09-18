@@ -115,12 +115,17 @@
 		.content .info{
 			padding-top: 53px;
 		}
+		.content .info .more{
+			position: absolute;
+			top: 40px;
+			left: 218px;
+		}
 		.content .info .news{
 			float: left;
 			padding-top: 110px;
 			width: 500px;			
 			background: url(images/bynewsbg.jpg) no-repeat;
-			
+			position: relative;/*子绝父相*/	
 		}
 		.content .info .news ul{
 			list-style: none;
@@ -147,6 +152,7 @@
 			height: 310px;
 			float: left;
 			background: url(images/byhrbg3.jpg) no-repeat;
+			position: relative;/*子绝父相*/			
 		}
 		.content .info .jobs .title{
 			padding-top: 40px;
@@ -238,6 +244,9 @@
 			</div>
 			<div class="info">
 				<div class="news">
+					<a href="#" class="more">
+						<img src="images/more.png" alt="">
+					</a>
 					<ul>
 						<li>
 							<span>09 / 28</span>
@@ -258,6 +267,9 @@
 					</ul>
 				</div>
 				<div class="jobs">
+					<a href="#" class="more">
+						<img src="images/more2.png" alt="">
+					</a>
 					<div class="title">
 						<h3>专场招聘</h3>
 					</div>
