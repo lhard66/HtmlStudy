@@ -15,8 +15,7 @@
     		height: 8888px;
 		}
 		.cl{
-			clear: both;
-			float: left;
+			clear: both;			
 		}
 		.header{
 			height: 58px;
@@ -72,6 +71,8 @@
 		}
 		.content{
 			padding-top: 50px;
+			height: 650px;
+			background: url(images/indexmainbg.jpg) no-repeat center bottom;
 		}
 		.content .product{
 			height: 229px;
@@ -111,6 +112,76 @@
 			padding-right: 11px;
 			background: url(images/sign.png) no-repeat right 5px;
 		}
+		.content .info{
+			padding-top: 53px;
+		}
+		.content .info .news{
+			float: left;
+			padding-top: 110px;
+			width: 500px;			
+			background: url(images/bynewsbg.jpg) no-repeat;
+			
+		}
+		.content .info .news ul{
+			list-style: none;
+			padding: 0 20px;
+		}
+		.content .info .news ul li{
+			line-height: 50px;
+			font-size: 12px;
+			border-bottom: 1px solid #DBE1E7;
+		}
+		.content .info .news ul li a{
+			color: #444866;
+			text-decoration: none;
+			font-size: 14px;
+		}
+		.content .info .news ul li a:hover{
+			color: orange;
+		}
+		.content .info .news ul li span{
+			margin-right: 22px;
+		}
+		.content .info .jobs{
+			width: 500px;
+			height: 310px;
+			float: left;
+			background: url(images/byhrbg3.jpg) no-repeat;
+		}
+		.content .info .jobs .title{
+			padding-top: 40px;
+			padding-left: 78px;
+		}
+		.content .info .jobs .title h3{
+			width: 199px;
+			height: 51px;
+			background: url(images/zczp.png) no-repeat;
+			text-indent: -999em;
+		}
+		.content .info .jobs h4{
+			padding-top: 26px;
+			padding-left: 20px;
+			color: #F2FFFF;
+			font-size: 14px;
+			font-weight: bold;
+		}
+		.content .info .jobs ul{
+			list-style: none;
+			padding-left: 20px;
+			width: 305px;
+		}
+		.content .info .jobs ul li{
+			line-height: 37px;
+			border-bottom: 1px solid #6FDEA3;
+		}
+		.content .info .jobs ul li a{
+			font-size: 14px;
+			color: #FFFFFF;
+			text-decoration: none;			
+		}
+		.content .info .jobs ul li a:hover{
+			color: orange;
+		}
 	</style>
 </head>
 <body>
@@ -136,32 +207,69 @@
 			</div>
 		</div>
 	</div>
-	<div class="cl"></div>
+	<!-- <div class="cl"></div> -->
 	<div class="banner"></div>
-	<div class="content inner_c">
-		<div class="product">
-			<ul>
-				<li>
-					<img src="images/p1.jpg" alt="">
-					<h3>BPT宣传片</h3>
-					<p><a href="#">点击播放</a></p>
-				</li>
-				<li>
-					<img src="images/p2.jpg" alt="">
-					<h3>博雅互动宣传视频</h3>
-					<p><a href="#">点击播放</a></p>
-				</li>
-				<li>
-					<img src="images/p3.jpg" alt="">
-					<h3>斗地主</h3>
-					<p><a href="#">点击播放</a></p>
-				</li>
-				<li class="last">
-					<img src="images/p4.jpg" alt="">
-					<h3>德州扑克</h3>
-					<p><a href="#">点击播放</a></p>
-				</li>
-			</ul>
+	<!-- 在这里设置背景图片，位置是居中，底部 -->
+	<div class="content">
+		<div class="inner_c">
+			<div class="product">
+				<ul>
+					<li>
+						<img src="images/p1.jpg" alt="">
+						<h3>BPT宣传片</h3>
+						<p><a href="#">点击播放</a></p>
+					</li>
+					<li>
+						<img src="images/p2.jpg" alt="">
+						<h3>博雅互动宣传视频</h3>
+						<p><a href="#">点击播放</a></p>
+					</li>
+					<li>
+						<img src="images/p3.jpg" alt="">
+						<h3>斗地主</h3>
+						<p><a href="#">点击播放</a></p>
+					</li>
+					<li class="last">
+						<img src="images/p4.jpg" alt="">
+						<h3>德州扑克</h3>
+						<p><a href="#">点击播放</a></p>
+					</li>
+				</ul>
+			</div>
+			<div class="info">
+				<div class="news">
+					<ul>
+						<li>
+							<span>09 / 28</span>
+							<a href="#">2015博雅国际博客大赛（BPT）在澳门落幕</a>
+						</li>
+						<li>
+							<span>08 / 26</span>
+							<a href="#">2015 BPT博雅国际扑克大赛重磅来袭</a>
+						</li>
+						<li>
+							<span>08 / 01</span>
+							<a href="#">博雅互动与阿里游戏联手启动“淘宝杯首届电视棋牌大赛</a>
+						</li>
+						<li>
+							<span>07 / 21</span>
+							<a href="#">湖南省省长杜家毫一行参观博雅互动</a>
+						</li>
+					</ul>
+				</div>
+				<div class="jobs">
+					<div class="title">
+						<h3>专场招聘</h3>
+					</div>
+					<h4>专场招聘岗位</h4>
+					<ul>
+						<li><a href="#">PHP开发工程师</a></li>
+						<li><a href="#">C++开发工程师</a></li>
+						<li><a href="#">WEB前端开发工程师</a></li>
+						<li><a href="#">大数据开发工程师</a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
