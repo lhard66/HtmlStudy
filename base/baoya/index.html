@@ -67,7 +67,34 @@
 		}
 		.banner{
 			height: 465px;
-			background: url(images/banner.jpg) no-repeat center top;			
+			background: url(images/banner.jpg) no-repeat center top;	
+			position: relative;							
+		}
+		.banner .swiper{
+			width: 120px;
+			height: 12px;
+			/*background-color: red;*/
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			margin-left: -60px;
+		}
+		.banner .swiper ol{
+			list-style: none;			
+		}
+		.banner .swiper ol li{
+			float: left;
+			width: 11px;
+			height: 11px;
+			background: url(images/noselicon.png) no-repeat;
+			margin-right: 15px;
+			cursor: pointer;			
+		}
+		.banner .swiper ol li.last{
+			margin-right: 0px;
+		}
+		.banner .swiper ol li.current{
+			background: url(images/selicon.png) no-repeat;
 		}
 		.content{
 			padding-top: 50px;
@@ -77,6 +104,35 @@
 		.content .product{
 			height: 229px;
 			border-bottom: 1px solid #DBE1E7;
+			position: relative;			
+		}
+		.content .product .swiper{
+			width: 86px;
+			height: 11px;
+			position: absolute;
+			bottom: -5px;
+			left: 50%;
+			margin-left: -55px;
+			background-color: white;
+			padding: 0 17px;
+		}
+		.content .product .swiper ol{
+			list-style: none;
+			
+		}
+		.content .product .swiper ol li{
+			width: 11px;
+			height: 11px;
+			background: url(images/noselicon.png) no-repeat;
+			float: left;
+			margin-right: 14px;
+			cursor: pointer;
+		}
+		.content .product .swiper ol li.last{
+			margin-right: 0px;
+		}
+		.content .product .swiper ol li.current{
+			background: url(images/selicon.png) no-repeat;
 		}
 		.content .product ul{
 			list-style: none;
@@ -246,11 +302,29 @@
 		</div>
 	</div>
 	<!-- <div class="cl"></div> -->
-	<div class="banner"></div>
+	<div class="banner">
+		<div class="swiper">
+			<ol>
+				<li class="current"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li class="last"></li>
+			</ol>
+		</div>
+	</div>
 	<!-- 在这里设置背景图片，位置是居中，底部 -->
 	<div class="content">
 		<div class="inner_c">
 			<div class="product">
+				<div class="swiper">
+					<ol>
+						<li class="current"></li>
+						<li></li>
+						<li></li>
+						<li class="last"></li>
+					</ol>
+				</div>
 				<ul>
 					<li>
 						<img src="images/p1.jpg" alt="">
