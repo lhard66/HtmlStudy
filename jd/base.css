@@ -1,29 +1,206 @@
 @charset "UTF-8";
 /*css 初始化 */
-html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
-fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }/*选中后外边框蓝色部分*/
-ul, ol { list-style:none; }
-input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
-select, input { vertical-align:middle;}
-select, input, textarea { font-size:12px; margin:0; }
-textarea { resize:none; } /*防止拖动*/
-img {border:0;	vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙*/
-table { border-collapse:collapse; }/*table、td边框合并为一条线*/
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+
+/*选中后外边框蓝色部分*/
+ul, ol {
+    list-style: none;
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体", serif;
+}
+
+select, input {
+    vertical-align: middle;
+}
+
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+/*防止拖动*/
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+/*  去掉图片低测默认的3像素空白缝隙*/
+table {
+    border-collapse: collapse;
+}
+
+/*table、td边框合并为一条线*/
 body {
-    font:12px/150% Arial,Verdana,"\5b8b\4f53";/*宋体*/
-    color:#666;
-    background:#fff
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53"; /*宋体*/
+    color: #666;
+    background: #fff
 }
-.clearfix:before,.clearfix:after {
-    content:"";
-    display:table;
+/*推荐清除浮动方法*/
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
 }
-.clearfix:after{clear:both;}
-.clearfix{
-    *zoom:1;/*IE/7/6*/
+
+.clearfix:after {
+    clear: both;
 }
-a {color:#666; text-decoration:none; }
-a:hover{color:#C81623;}
-h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:100%;}
-s,i,em{font-style:normal;text-decoration:none;}
-.col-red{color: #C81623!important;}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C81623;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+s, i, em {
+    font-style: normal;
+    text-decoration: none;
+}
+/*网站主色调*/
+.col-red {
+    color: #C81623 !important;
+}
+
+/*公共类*/
+.w{
+    width:1210px;/*内容部分的总宽度*/
+    margin:0 auto;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.al{
+    text-align: left;
+}
+.ac{
+    text-align: center;
+}
+.ar{
+    text-align: right;
+}
+.hide{
+    display: none;
+}
+
+/*头部导航开始*/
+
+.shortcut {
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    background-color: #F1F1F1;
+}
+.shortcut .w{
+    height:30px;
+}
+/*子绝父相*/
+.shortcut ul.left  {
+    float: left;
+    position: relative;
+    /*padding-left:10px;*/
+}
+.shortcut ul.left li{
+    float: left;
+    height:30px;
+    text-align: center;
+}
+/*子绝父相，调整盒子位于北京后*/
+/*此盒子使用绝对定位的top和left默认与左侧送至盒子一样*/
+.shortcut ul li i {
+    display: block;
+    float: left;
+    width: 10px;
+    height: 5px;
+    overflow: hidden;
+    position: absolute;
+    top:12px;
+    left:65px;
+    cursor: pointer;
+}
+.shortcut ul li i s {
+    position: relative;
+    top:-15px;
+}
+/*为右盒子重写top、left和外边距*/
+.shortcut ul.right li.dropdown-icon{
+    position: relative;
+    margin-right:20px;
+}
+.shortcut ul.right li i{
+    top:12px;
+    left:50px;
+}
+/*调整被覆盖的多少*/
+.shortcut ul.right {
+    float: right;
+}
+.shortcut ul.right li{
+    float: left;
+    margin-right:8px;
+}
+.shortcut ul.right li.last{
+    margin-right:0;
+}
+.shortcut ul.right li.spacer{
+    width:1px;
+    height:12px;
+    background-color: #ddd;
+    margin-top:9px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
