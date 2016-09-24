@@ -127,12 +127,11 @@ s, i, em {
     height:30px;
 }
 /*子绝父相*/
-.shortcut ul.left  {
-    float: left;
+.shortcut ul.fl  {
     position: relative;
     /*padding-left:10px;*/
 }
-.shortcut ul.left li{
+.shortcut ul.fl li{
     float: left;
     height:30px;
     text-align: center;
@@ -155,26 +154,23 @@ s, i, em {
     top:-15px;
 }
 /*为右盒子重写top、left和外边距*/
-.shortcut ul.right li.dropdown-icon{
+.shortcut ul.fr li.dropdown-icon{
     position: relative;
     margin-right:20px;
 }
-.shortcut ul.right li i{
+.shortcut ul.fr li i{
     top:12px;
     left:50px;
 }
 /*调整被覆盖的多少*/
-.shortcut ul.right {
-    float: right;
-}
-.shortcut ul.right li{
+.shortcut ul.fr li{
     float: left;
     margin-right:8px;
 }
-.shortcut ul.right li.last{
+.shortcut ul.fr li.last{
     margin-right:0;
 }
-.shortcut ul.right li.spacer{
+.shortcut ul.fr li.spacer{
     width:1px;
     height:12px;
     background-color: #ddd;

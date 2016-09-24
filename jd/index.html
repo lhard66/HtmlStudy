@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JD</title>
     <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="index.css">
     <style type="text/css">
         body {
             font: 12px/150% Arial, Verdana, "\5b8b\4f53";
@@ -14,14 +15,7 @@
             background: #fff;
             height: 6666px;
         }
-        .top-banner{
-            width:100%;
-            text-align: center;
-            background-color: #D6D4D5;
-        }
-        .top-banner a{
 
-        }
     </style>
 </head>
 <body>
@@ -29,12 +23,12 @@
 <div class="shortcut">
     <!--设置内容宽度，并居中-->
     <div class="w">
-        <ul class="left">
+        <ul class="fl">
             <li>
                 <i><s>◇</s></i>送至：<span>北京</span>
             </li>
         </ul>
-        <ul class="right">
+        <ul class="fr">
             <li><a href="#">你好，请登录</a>&nbsp;&nbsp;<a href="#" class="col-red">免费注册</a> </li>
             <li class="spacer"></li>
             <li><a href="#">我的订单</a></li>
@@ -77,10 +71,27 @@
     </a>
 </div>
 <div class="header w">
-    <div class="logo"></div>
-    <div class="search"></div>
-    <div class="keyword"></div>
-    <div class="shopping-cart"></div>
+    <div class="logo fl">
+        <a href="#">京东</a>
+    </div>
+    <div class="search fl">
+        <form action="#" method="post">
+            <input type="text" class="search-word" placeholder="闪购特卖"><input type="submit" class="search-button" value="搜索">
+        </form>
+    </div>
+    <div class="shopping-car fl">
+        <a href="#">我的购物车&nbsp;&nbsp;&nbsp;&nbsp;></a>
+    </div>
+    <div class="keyword fl">
+        <a href="#" class="col-red">199减100</a>
+        <a href="#">YOGABook</a>
+        <a href="#">家用物资</a>
+        <a href="#">乐Pro3</a>
+        <a href="#">1元拿走</a>
+        <a href="#">戴尔笔记本</a>
+        <a href="#">热水壶</a>
+        <a href="#" class="last">1元专享</a>
+    </div>
 </div>
 </body>
 </html>

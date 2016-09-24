@@ -1,0 +1,60 @@
+/*banner广告条部分*/
+.top-banner{
+    width:100%;
+    text-align: center;
+    background-color: #D6D4D5;
+}
+/*header 头部分*/
+.header{
+    padding-top:25px;
+}
+.header .logo{
+    margin-right:92px;
+    display: block;
+    height:60px;
+    width:270px;
+    background: url(images/logo.png) no-repeat 0,0;
+    text-indent:-9999em;
+}
+.header .logo a{
+}
+.header .search{
+    /*padding-top:25px;*/
+}
+.header .search .search-word{
+    width:454px;
+    height:32px;
+    border:2px solid #B61D1D;
+    padding-left:4px;
+    font-size:14px;
+}
+.header .search .search-button{
+    /*display: block;*/
+    background-color: #B61D1D;
+    width:84px;
+    height:36px;
+    border:2px solid #B61D1D;
+    color: #FFFFFF;
+    font-size:16px;
+    font-family:"Microsoft YaHei",serif;
+    cursor: pointer;
+}
+.header .keyword{
+    width:458px;
+}
+.header .keyword a{
+    margin-right:7px;
+}
+.header .keyword .last{
+    margin-right:0;
+}
+.header .shopping-car a{
+    display: block;
+    width:140px;
+    height:35px;
+    border: 1px solid #DFDFDF;
+    background-color: #F9F9F9;
+    text-align: center;
+    line-height:35px;
+    margin-left:104px;
+}
