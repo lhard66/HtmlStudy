@@ -210,6 +210,9 @@ s, i, em {
     left: 50%;
     margin-left:352px;
 }
+.footer .service{
+    margin-bottom:20px;
+}
 .footer .service .map{
     padding-top: 25px;
 }
@@ -237,6 +240,25 @@ s, i, em {
 }
 .footer .service .map .coverage .detail{
     text-align: right;
+}
+.footer .info{
+    border-top:1px solid #E5E5E5;
+    text-align: center;
+}
+.footer .links{
+    padding-top: 20px;
+}
+.footer .links a{
+    padding:0 6px;
+}
+.footer .copyright{
+    padding-top:10px;
+}
+.footer .authentication{
+    padding-top:10px;
+}
+.footer .authentication a{
+    margin-left:13px;
 }
 
 
