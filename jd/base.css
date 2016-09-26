@@ -177,10 +177,67 @@ s, i, em {
     margin-top:9px;
 }
 
-
-
-
-
+/*底部样式*/
+.footer .service .slogen {
+    background-color: #F5F5F5;
+    position: relative;
+    padding: 47px 0;
+}
+.footer .service .slogen span{
+    text-indent:-9999em;
+    position: absolute;
+    width:211px;
+    height:44px;
+    top: 25px;
+}
+.footer .service .slogen .item1{
+    background: url(images/service_1.png) no-repeat;
+    left: 50%;
+    margin-left:-563px;
+}
+.footer .service .slogen .item2{
+    background: url(images/service_2.png) no-repeat;
+    left: 50%;
+    margin-left:-258px;
+}
+.footer .service .slogen .item3{
+    background: url(images/service_3.png) no-repeat;
+    left: 50%;
+    margin-left: 47px;
+}
+.footer .service .slogen .item4{
+    background: url(images/service_4.png) no-repeat;
+    left: 50%;
+    margin-left:352px;
+}
+.footer .service .map{
+    padding-top: 25px;
+}
+.footer .service .map dl{
+    float: left;
+    width: 200px;
+}
+.footer .service .map dl dt{
+    font: 400 16px/24px "Microsoft YaHei";
+    line-height:30px;
+}
+.footer .service .map dl dd{
+    line-height: 20px;
+}
+.footer .service .map .coverage{
+    float: left;
+    background: url(images/spiritfooter.png) no-repeat left bottom;
+    width: 185px;
+    height: 170px;
+    padding-left:20px;
+}
+.footer .service .map .coverage h3{
+    font:400 16px/24px "Microsoft YaHei";
+    padding-bottom:16px;
+}
+.footer .service .map .coverage .detail{
+    text-align: right;
+}
 
 
 

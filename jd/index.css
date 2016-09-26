@@ -8,6 +8,7 @@
 /*header 头部分*/
 .header {
     padding-top: 25px;
+    height:60px;
 }
 
 .header .logo {
