@@ -8,7 +8,7 @@
 /*header 头部分*/
 .header {
     padding-top: 25px;
-    height:60px;
+    height: 60px;
 }
 
 .header .logo {
@@ -60,8 +60,9 @@
 }
 
 .header .shopping-car {
-    margin-left:104px;
+    margin-left: 104px;
     position: relative;
+    z-index:10;
 }
 
 .header .shopping-car a {
@@ -109,8 +110,89 @@
     cursor: pointer;
 }
 
+/*导航部分*/
+.nav{
+    height:44px;
+    border-bottom:2px solid #B1191A;
+}
+.nav .categories {
+    height: 44px;
+    width: 210px;
+    float: left;
+}
 
+.nav .categories .dt a {
+    display: block;
+    color: #FFF;
+    background-color: #B1191A;
+    text-align: left;
+    font: 400 15px/44px "Microsoft YaHei";
+    padding-left: 10px;
+}
 
+.nav .categories .dd {
+    height: 462px;
+    width: 198px;
+    margin-top: 2px;
+    background-color: #C81623;
+    border:1px solid #C81623;
+    padding-left:10px;
+}
+.nav .categories .dd .dd-inner a{
+    display: block;
+    width: 182px;
+    height:31px;
+    font:400 14px/31px "Microsoft YaHei";
+    color: #FFF;
+    float: left;
+}
+.nav .categories .dd .dd-inner i{
+    float: left;
+    cursor: pointer;
+    font:400 9px/14px consolas;
+    color: #FFF;
+    position: relative;
+    top:8px;
+    right:0;
+}
+.nav .items{
+    float: left;
+}
+
+.nav .items ul li {
+    float: left;
+    margin:0 20px;
+    height:44px;
+    font:400 15px/44px "Microsoft YaHei";
+}
+.nav .logo{
+    position: relative;
+    top:-85px;
+    left:30px;
+    float: left;
+    width: 290px;
+    height:130px;
+    background: url(images/navad.png) no-repeat 0 0;
+    text-indent:-9999em;
+    padding-top:69px;
+    padding-left:5px;
+}
+.nav .logo a{
+    display: block;
+    width:220px;
+    height:60px;
+}
+/*中央大banner*/
+
+.focus .slider {
+    float: left;
+    height: 466px;
+    padding-left:220px;
+    margin-top:-143px;
+}
+.focus .slider ul li{
+    float: left;
+}
 
 
 
