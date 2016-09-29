@@ -196,22 +196,22 @@
 /*position: absolute;*/
 
 /*}*/
-.focus .slider {
+.focus {
     height: 466px;
     position: relative;
 }
 
-.focus .slider .slider-banner ul {
+.focus .slider ul {
     position: relative;
     margin: 10px 0 0 220px;
 }
 
-.focus .slider .slider-banner ul li {
+.focus .slider ul li {
     position: absolute;
 
 }
 
-.focus .slider .slider-banner li a {
+.focus .slider li a {
     /*display: block;*/
 }
 
@@ -219,7 +219,7 @@
     z-index: 100;
 }
 
-.focus .slider .extra-page {
+.focus .extra-page {
     width: 730px;
     position: absolute;
     top: 200px;
@@ -227,7 +227,7 @@
     z-index: 1000;
 }
 
-.focus .slider .extra-page a {
+.focus .extra-page a {
     display: block;
     width: 30px;
     height: 60px;
@@ -237,25 +237,27 @@
     color: #FFF;
 }
 
-.focus .slider .extra-page .slider-pre {
+.focus .extra-page .slider-pre {
     float: left;
 }
 
-.focus .slider .extra-page .slider-next {
+.focus .extra-page .slider-next {
     float: right;
 }
-.focus .slider .extra-nav{
+
+.focus .extra-nav {
     position: absolute;
     top: 430px;
     left: 520px;
-    z-index:1000;
+    z-index: 1000;
     width: 200px;
 }
-.focus .slider .extra-nav li{
+
+.focus .extra-nav li {
     float: left;
-    width:18px;
+    width: 18px;
     height: 18px;
-    margin:0 2px;
+    margin: 0 2px;
     background-color: #3E3E3E;
     color: #FFF;
     text-align: center;
@@ -263,8 +265,139 @@
     cursor: pointer;
 }
 
+.focus .focus-extra {
+    float: right;
+    width: 250px;
+    height: 454px;
+    position: absolute;
+    right: 0;
+}
 
+.focus-extra .fast-news {
+    border: 1px solid #E4E4E4;
+    height: 163px;
+}
 
+.focus-extra .fast-news .fast-title {
+    height: 32px;
+    padding: 0 15px;
+    border-bottom: 1px dotted #E4E4E4;
+}
+
+.focus-extra .fast-news h2 {
+    float: left;
+    font: 400 16px/32px "Microsoft YaHei";
+    border-bottom: 1px dashed #E4E4E4;
+}
+
+.focus-extra .fast-news .fast-title span {
+    float: right;
+}
+
+.focus-extra .fast-news .fast-title a {
+    line-height: 32px;
+}
+
+.focus-extra .fast-news .news-content ul {
+    padding: 5px 0 0 15px;
+    line-height: 24px;
+}
+
+.focus-extra .fast-news .news-content i {
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.fast-service {
+    width: 300px;
+    position: relative;
+}
+
+.fast-service li {
+    width: 62px;
+    height: 66px;
+    float: left;
+    border: 1px solid #E4E4E4;
+    margin-left: -1px;
+    margin-top: -1px;
+}
+
+.fast-service li span {
+    display: block;
+    padding-top: 45px;
+    text-align: center;
+}
+
+.fast-service li i {
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    background: url(images/spirit_focus_service.png) no-repeat;
+}
+
+.fast-service .fast-icon1 i {
+    left: 18px;
+    top: 13px;
+    background-position: -26px 0;
+}
+.fast-service .fast-icon2 i{
+    background-position: -26px -25px;
+    left: 82px;
+    top: 13px;
+}
+.fast-service .fast-icon3 i{
+    background-position: -26px -49px;
+    left: 145px;
+    top: 13px;
+}
+.fast-service .fast-icon4 i{
+    background-position: -26px -74px;
+    left: 206px;
+    top: 13px;
+}
+.fast-service .fast-icon5 i{
+    background-position: -26px -99px;
+    left: 18px;
+    top: 80px;
+}
+.fast-service .fast-icon6 i{
+    background-position: -26px -99px;
+    left: 82px;
+    top: 80px;
+}
+.fast-service .fast-icon7 i{
+    background-position: -26px -99px;
+    left: 145px;
+    top: 80px;
+}
+.fast-service .fast-icon8 i{
+    background-position: -26px -99px;
+    left: 206px;
+    top: 80px;
+}
+.fast-service .fast-icon9 i{
+    background-position: -26px -99px;
+    left: 18px;
+    top: 148px;
+}
+.fast-service .fast-icon10 i{
+    background-position: -26px -99px;
+    left: 82px;
+    top: 148px;
+}
+.fast-service .fast-icon11 i{
+    background-position: -26px -99px;
+    left: 145px;
+    top: 148px;
+}
+.fast-service .fast-icon12 i{
+    background-position: -26px -99px;
+    left: 206px;
+    top: 148px;
+}
+.focus-ad {
+    padding-top: 13px;
+}
 
 
 
