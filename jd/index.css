@@ -398,11 +398,28 @@
 .focus-ad {
     padding-top: 13px;
 }
-
-
-
-
-
+/*产品推广开始*/
+.good-pro .good-important{
+    float: left;
+    width: 210px;
+}
+.good-pro .good-important a{
+    display: block;
+    height: 155px;
+    background: url(images/watch.png) no-repeat;
+}
+.good-pro .good-all{
+    float: right;
+    width:1000px;
+    overflow: hidden;
+}
+.good-pro .good-all ul{
+    width:500%;
+}
+.good-pro .good-all li{
+    float: left;
+    margin-right:1px ;
+}
 
 
 
