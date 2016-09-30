@@ -3,8 +3,15 @@
     width: 100%;
     text-align: center;
     background-color: #D6D4D5;
+    position: relative;
 }
+.top-banner .closeBanner{
+    position: absolute;
+    width:19px;
+    height: 19px;
+    background: url(images/close.png) no-repeat 0 -19px;
 
+}
 /*header 头部分*/
 .header {
     padding-top: 25px;
