@@ -53,6 +53,7 @@ body {
     color: #666;
     background: #fff
 }
+
 /*推荐清除浮动方法*/
 .clearfix:before, .clearfix:after {
     content: "";
@@ -86,32 +87,39 @@ s, i, em {
     font-style: normal;
     text-decoration: none;
 }
+
 /*网站主色调*/
 .col-red {
     color: #C81623 !important;
 }
 
 /*公共类*/
-.w{
-    width:1210px;/*内容部分的总宽度*/
-    margin:0 auto;
+.w {
+    width: 1210px; /*内容部分的总宽度*/
+    margin: 0 auto;
 }
-.fl{
+
+.fl {
     float: left;
 }
-.fr{
+
+.fr {
     float: right;
 }
-.al{
+
+.al {
     text-align: left;
 }
-.ac{
+
+.ac {
     text-align: center;
 }
-.ar{
+
+.ar {
     text-align: right;
 }
-.hide{
+
+.hide {
     display: none;
 }
 
@@ -123,19 +131,23 @@ s, i, em {
     line-height: 30px;
     background-color: #F1F1F1;
 }
-.shortcut .w{
-    height:30px;
+
+.shortcut .w {
+    height: 30px;
 }
+
 /*子绝父相*/
-.shortcut ul.fl  {
+.shortcut ul.fl {
     position: relative;
     /*padding-left:10px;*/
 }
-.shortcut ul.fl li{
+
+.shortcut ul.fl li {
     float: left;
-    height:30px;
+    height: 30px;
     text-align: center;
 }
+
 /*子绝父相，调整盒子位于北京后*/
 /*此盒子使用绝对定位的top和left默认与左侧送至盒子一样*/
 .shortcut ul li i {
@@ -145,36 +157,42 @@ s, i, em {
     height: 5px;
     overflow: hidden;
     position: absolute;
-    top:12px;
-    left:65px;
+    top: 12px;
+    left: 65px;
     cursor: pointer;
 }
+
 .shortcut ul li i s {
     position: relative;
-    top:-15px;
+    top: -15px;
 }
+
 /*为右盒子重写top、left和外边距*/
-.shortcut ul.fr li.dropdown-icon{
+.shortcut ul.fr li.dropdown-icon {
     position: relative;
-    margin-right:20px;
+    margin-right: 20px;
 }
-.shortcut ul.fr li i{
-    top:12px;
-    left:50px;
+
+.shortcut ul.fr li i {
+    top: 12px;
+    left: 50px;
 }
+
 /*调整被覆盖的多少*/
-.shortcut ul.fr li{
+.shortcut ul.fr li {
     float: left;
-    margin-right:8px;
+    margin-right: 8px;
 }
-.shortcut ul.fr li.last{
-    margin-right:0;
+
+.shortcut ul.fr li.last {
+    margin-right: 0;
 }
-.shortcut ul.fr li.spacer{
-    width:1px;
-    height:12px;
+
+.shortcut ul.fr li.spacer {
+    width: 1px;
+    height: 12px;
     background-color: #ddd;
-    margin-top:9px;
+    margin-top: 9px;
 }
 
 /*底部样式*/
@@ -183,85 +201,130 @@ s, i, em {
     position: relative;
     padding: 47px 0;
 }
-.footer .service .slogen span{
-    text-indent:-9999em;
+
+.footer .service .slogen span {
+    text-indent: -9999em;
     position: absolute;
-    width:211px;
-    height:44px;
+    width: 211px;
+    height: 44px;
     top: 25px;
 }
-.footer .service .slogen .item1{
+
+.footer .service .slogen .item1 {
     background: url(images/service_1.png) no-repeat;
     left: 50%;
-    margin-left:-563px;
+    margin-left: -563px;
 }
-.footer .service .slogen .item2{
+
+.footer .service .slogen .item2 {
     background: url(images/service_2.png) no-repeat;
     left: 50%;
-    margin-left:-258px;
+    margin-left: -258px;
 }
-.footer .service .slogen .item3{
+
+.footer .service .slogen .item3 {
     background: url(images/service_3.png) no-repeat;
     left: 50%;
     margin-left: 47px;
 }
-.footer .service .slogen .item4{
+
+.footer .service .slogen .item4 {
     background: url(images/service_4.png) no-repeat;
     left: 50%;
-    margin-left:352px;
+    margin-left: 352px;
 }
-.footer .service{
-    margin-bottom:20px;
+
+.footer .service {
+    margin-bottom: 20px;
 }
-.footer .service .map{
+
+.footer .service .map {
     padding-top: 25px;
 }
-.footer .service .map dl{
+
+.footer .service .map dl {
     float: left;
     width: 200px;
 }
-.footer .service .map dl dt{
+
+.footer .service .map dl dt {
     font: 400 16px/24px "Microsoft YaHei";
-    line-height:30px;
+    line-height: 30px;
 }
-.footer .service .map dl dd{
+
+.footer .service .map dl dd {
     line-height: 20px;
 }
-.footer .service .map .coverage{
+
+.footer .service .map .coverage {
     float: left;
     background: url(images/spiritfooter.png) no-repeat left bottom;
     width: 185px;
     height: 170px;
-    padding-left:20px;
+    padding-left: 20px;
 }
-.footer .service .map .coverage h3{
-    font:400 16px/24px "Microsoft YaHei";
-    padding-bottom:16px;
+
+.footer .service .map .coverage h3 {
+    font: 400 16px/24px "Microsoft YaHei";
+    padding-bottom: 16px;
 }
-.footer .service .map .coverage .detail{
+
+.footer .service .map .coverage .detail {
     text-align: right;
 }
-.footer .info{
-    border-top:1px solid #E5E5E5;
+
+.footer .info {
+    border-top: 1px solid #E5E5E5;
     text-align: center;
 }
-.footer .links{
+
+.footer .links {
     padding-top: 20px;
 }
-.footer .links a{
-    padding:0 6px;
-}
-.footer .copyright{
-    padding-top:10px;
-}
-.footer .authentication{
-    padding-top:10px;
-}
-.footer .authentication a{
-    margin-left:13px;
+
+.footer .links a {
+    padding: 0 6px;
 }
 
+.footer .copyright {
+    padding-top: 10px;
+}
 
+.footer .authentication {
+    padding-top: 10px;
+}
+
+.footer .authentication a {
+    margin-left: 13px;
+}
+
+/*用户登陆*/
+.page-cover {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index:999;
+    position: fixed;
+    top:0;
+    left:0;
+    display: none;
+}
+.login{
+    width: 500px;
+    height: 300px;
+    background-color: #fff;
+    position: fixed;
+    top:50%;
+    left:50%;
+    margin-left:-250px;
+    margin-top:-250px;
+    z-index:1000;
+    display: none;
+}
+.login .login-close{
+    top:0;
+    right:0;
+}
 
 
 

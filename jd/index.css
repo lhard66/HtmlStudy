@@ -5,7 +5,7 @@
     background-color: #D6D4D5;
     position: relative;
 }
-.top-banner .closeBanner{
+.close-icon{
     position: absolute;
     width:19px;
     height: 19px;
@@ -131,7 +131,7 @@
     width: 210px;
     float: left;
     position: relative;
-    z-index: 1000;
+    z-index: 100;
 }
 
 .nav .categories .dt a {
