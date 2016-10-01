@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .search {
+            margin: 100px auto;
+            width: 258px;
+            position: relative;
+        }
+        input{
+            outline: none;
+        }
+        .search .content {
+            width: 205px;
+            height: 35px;
+            border: 2px solid #A6A5A3;
+            border-radius: 5px 0 0 5px;
+            float: left;
+            font-size:16px;
+            padding-left:7px;
+        }
+        .search .btn{
+            width:40px;
+            height: 39px;
+            border:1px solid #AAAAAA;
+            border-left:0px;
+            border-radius: 0 5px 5px 0;
+            float: left;
+            background: url(images/right.jpg) no-repeat;
+            cursor: pointer;
+        }
+        .search .word{
+            position: absolute;
+            cursor: text;
+            top:11px;
+            left:10px;
+            color: #ccc;
+        }
+        .clearfix{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="search">
+    <form action="#">
+        <input type="text" class="content" id="txt" />
+        <label for="txt" class="word">必败的国际大牌</label>
+        <input type="submit" class="btn" value=""/>
+    </form>
+</div>
+<div class="clearfix"></div>
+
+</body>
+</html>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
