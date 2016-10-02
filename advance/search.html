@@ -46,16 +46,31 @@
             left:10px;
             color: #ccc;
         }
-        .clearfix{
-            float: left;
-        }
+
     </style>
+    <script>
+        window.onload=function () {
+            function $(id) {
+                return document.getElementById(id);
+            }
+            $('txt').oninput=$('txt').onpropertychange=function () {
+                if(this.value==''){
+                    $('msg').style.display='block';
+
+                }
+                else {
+
+                    $("msg").style.display='none';
+                }
+            }
+        }
+    </script>
 </head>
 <body>
 <div class="search">
     <form action="#">
         <input type="text" class="content" id="txt" />
-        <label for="txt" class="word">必败的国际大牌</label>
+        <label for="txt" class="word" id="msg">必败的国际大牌</label>
         <input type="submit" class="btn" value=""/>
     </form>
 </div>
