@@ -13,9 +13,9 @@
         }
 
         .clock {
-            background: url(images/clock.jpg) no-repeat 0 0/500px 500px;
-            width: 500px;
-            height: 500px;
+            background: url(images/clock.jpg) no-repeat 0 0/300px 300px;
+            width: 300px;
+            height: 300px;
             margin: 10px auto;
             position: relative;
         }
@@ -29,15 +29,15 @@
         }
 
         .hour {
-            background: url(images/hour.png) no-repeat center center/25px 500px;
+            background: url(images/hour.png) no-repeat center center/15px 300px;
         }
 
         .minute {
-            background: url(images/minute.png) no-repeat center center/25px 500px;
+            background: url(images/minute.png) no-repeat center center/15px 300px;
         }
 
         .second {
-            background: url(images/second.png) no-repeat center center/25px 500px;
+            background: url(images/second.png) no-repeat center center/15px 300px;
         }
     </style>
     <script>
@@ -53,9 +53,18 @@
                 var m = date.getMinutes() + s / 60;
                 var h = date.getHours() + m / 60;
 
+                //google
                 $('second').style.webkitTransform = 'rotate(' + s * 6 + 'deg)';
                 $('minute').style.webkitTransform = 'rotate(' + m * 6 + 'deg)';
                 $('hour').style.webkitTransform = 'rotate(' + h * 30 + 'deg)';
+                //IE
+                $('second').style.msTransform = 'rotate(' + s * 6 + 'deg)';
+                $('minute').style.msTransform = 'rotate(' + m * 6 + 'deg)';
+                $('hour').style.msTransform = 'rotate(' + h * 30 + 'deg)';
+                //Firefox
+                $('second').style.MozTransform = 'rotate(' + s * 6 + 'deg)';
+                $('minute').style.MozTransform = 'rotate(' + m * 6 + 'deg)';
+                $('hour').style.MozTransform = 'rotate(' + h * 30 + 'deg)';
             }, 1000);
         }
     </script>
