@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+
+        }
+        .tab{
+            margin:100px auto;
+            width: 200px;
+            border:1px solid black;
+            overflow: hidden;
+        }
+        .tab ul{
+            list-style:none;
+            border-bottom:1px solid black;
+            overflow: hidden;
+        }
+        .tab li {
+            float: left;
+        }
+        .tab li a{
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            width:40px;
+            color: black;
+
+        }
+        .tab li a:hover{
+            color: black;
+        }
+        .tab .content{
+            width: 200px;
+            height: 100px;
+        }
+        .current{
+            background-color: red;
+            color: #000;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            function $(id) {
+                return document.getElementById(id);
+            }
+            var typeli=$('type').children;
+            for(var i=0;i<typeli.length;i++){
+                typeli[i].index=i;
+                typeli[i].onclick=function () {
+                    for(var j=0;j<typeli.length;j++){
+                        typeli[j].removeAttribute('class');
+                        $('content').innerText=this.index;
+                    }
+                    this.setAttribute('class','current');
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="tab">
+        <ul id="type">
+            <li class="current"><a href="#">体育</a></li>
+            <li><a href="#">新闻</a></li>
+            <li><a href="#">娱乐</a></li>
+            <li><a href="#">生活</a></li>
+            <li><a href="#">健康</a></li>
+        </ul>
+        <div id="content" class="content">
+            0
+        </div>
+    </div>
+</body>
+</html>
