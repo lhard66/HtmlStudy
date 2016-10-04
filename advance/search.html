@@ -50,9 +50,12 @@
     </style>
     <script>
         window.onload=function () {
+
             function $(id) {
                 return document.getElementById(id);
             }
+            //获取焦点
+            $('txt').focus();
             $('txt').oninput=$('txt').onpropertychange=function () {
                 if(this.value==''){
                     $('msg').style.display='block';
@@ -74,8 +77,6 @@
         <input type="submit" class="btn" value=""/>
     </form>
 </div>
-<div class="clearfix"></div>
 
 </body>
 </html>
-<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
