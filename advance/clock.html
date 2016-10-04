@@ -17,6 +17,7 @@
             width: 300px;
             height: 300px;
             margin: 10px auto;
+            display: none;
             position: relative;
         }
 
@@ -45,8 +46,7 @@
             function $(id) {
                 return document.getElementById(id);
             }
-
-            setInterval(function () {
+            function clock() {
                 var date = new Date();
                 var ms = date.getMilliseconds();//毫秒
                 var s = date.getSeconds();//秒
@@ -65,12 +65,16 @@
                 $('second').style.MozTransform = 'rotate(' + s * 6 + 'deg)';
                 $('minute').style.MozTransform = 'rotate(' + m * 6 + 'deg)';
                 $('hour').style.MozTransform = 'rotate(' + h * 30 + 'deg)';
-            }, 1000);
+            }
+            setInterval(clock, 1000);
+
+            clock();
+            $('clock').style.display = 'block';
         }
     </script>
 </head>
 <body>
-<div class="clock">
+<div class="clock" id="clock">
     <div class="hour" id="hour"></div>
     <div class="minute" id="minute"></div>
     <div class="second" id="second"></div>
