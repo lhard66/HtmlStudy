@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="myclass">11111111111</div>
+<div id="myid">2222222222</div>
+<span>3333333333</span>
+
+<script src="selector.js" type="text/javascript"></script>
+
+<script>
+    var test1 = $('#myid').innerText;
+    var test2 = $('.myclass')[0].innerText;
+    var test3 = $('span')[0].innerText;
+    console.log('id=' + test1);
+    console.log('class=' + test2);
+    console.log('tag=' + test3);
+</script>
+</body>
+</html>

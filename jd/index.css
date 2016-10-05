@@ -94,7 +94,6 @@
     width: 16px;
     height: 13px;
     background: url(images/spiritheader.png) no-repeat -1px -59px;
-    background-color: #fff;
 }
 
 .header .shopping-car .num {
@@ -225,7 +224,9 @@
 .focus .slider .slider-current {
     z-index: 100;
 }
-
+.focus .extra-nav .slider-num{
+    background-color: #C81623;
+}
 .focus .extra-page {
     width: 730px;
     position: absolute;
