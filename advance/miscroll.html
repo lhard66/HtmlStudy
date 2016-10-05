@@ -13,11 +13,13 @@
             overflow: hidden;
             margin: 100px auto;
             position: relative;
+            border-radius: 10px;
+            cursor:pointer;
         }
 
         .mi img {
             position: absolute;
-            top: -100px;
+            top: 0px;
         }
 
         .up {
@@ -43,32 +45,47 @@
             function setlocation(y) {
                 return $('miad').getElementsByTagName('img')[0].style.top = y + 'px';
             }
+
             function getlocation() {
-//                return $('miad').getElementsByTagName('img')[0].style.top;
+                return $('miad').getElementsByTagName('img')[0].style.top;
                 //为什么拿不到？？？
             }
-            var y=0;
+
+            var y = 0;
             var timer;
+
             function up() {
-
-                y = y - 3;
-                setlocation(y);
+                if (y < 0) {
+                    y = y + 10;
+                    setlocation(y);
+                } else {
+                    clearInterval(timer);
+                }
             }
+
             function down() {
-                y=y+3;
-                setlocation(y);
-            }
-            $('miup').onmouseover=function () {
-                clearInterval(timer);
-                timer= setInterval(up,100);
+                if (y > -1070) {
 
+                    y = y - 10;
+                    setlocation(y);
+                } else {
+                    clearInterval(timer);
+                }
             }
-            $('midown').onmouseover=function () {
+
+            $('miup').onmouseover = function () {
                 clearInterval(timer);
-                timer=setInterval(down,100);
+                timer = setInterval(up, 100);
             }
-            $('miad').onmouseout=function () {
+            $('midown').onmouseover = function () {
                 clearInterval(timer);
+                timer = setInterval(down, 100);
+            }
+            $('miad').onmouseout = function () {
+                clearInterval(timer);
+            }
+            $('miad').onclick = function () {
+                alert(getlocation());
             }
         }
     </script>
@@ -79,5 +96,6 @@
     <div class="up" id="miup"></div>
     <div class="down" id="midown"></div>
 </div>
+
 </body>
 </html>
