@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>可选择缓冲动画滚动效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .scroll {
+            margin: 100px auto;
+            width: 320px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .scroll ul {
+            list-style: none;
+        }
+
+        .scroll ul.main {
+            width: 800%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .scroll .main li {
+            float: left;
+        }
+
+        .scroll .main li img {
+            vertical-align: top;
+        }
+
+        /*序号*/
+        .scroll ul.extra {
+            position: absolute;
+            top: 175px;
+            left: 115px;
+
+        }
+
+        .scroll .extra li {
+            float: left;
+            width: 16px;
+            height: 16px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            line-height: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin: 0 3px;
+        }
+
+        .scroll .extra .current {
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //设置小点变色
+            var pointers = $('#pointer').children;
+            //清空小点的颜色
+            function removeCurrent() {
+                for (var i = 0; i < pointers.length; i++) {
+                    pointers[i].removeAttribute('class');
+                }
+            }
+            function changeCurrent() {
+                removeCurrent();
+                pointers[target/320].className = 'current';
+            }
+            for (var i = 0; i < pointers.length; i++) {
+                pointers[i].onmouseover = function () {
+                    removeCurrent();
+                    this.className = 'current';
+                }
+            }
+
+            //轮播变量
+            var x = 0;
+            var target = 320;
+            var direction = 1;
+
+            function goscroll() {
+
+                if (direction > 0) {
+                    if (Math.round(x) == target) {
+                        if (target == 1280) {
+                            direction = -1;
+                            target = target - 320 - 320;
+                        }
+                        target = target + 320;
+                       changeCurrent();
+                    }
+                } else {
+                    if (Math.round(x) == target) {
+                        if (target == 320) {
+                            direction = 1;
+                        }
+                        target = target - 320;
+                        changeCurrent();
+                    }
+//                    console.log(Math.ceil(x));
+//                    console.log(target);
+                }
+                x = x + (target - x) / 8;
+                $('#imgul').style.left = -x + 'px';
+            }
+
+            function $(id) {
+                return document.getElementById(id.substr(1));
+            }
+
+            //开始计时
+            var timer = setInterval(goscroll, 50);
+
+            $('#imgdiv').onmouseover = function () {
+//                clearInterval(timer);
+            }
+            $('#imgdiv').onmouseout = function () {
+//                timer = setInterval(goscroll, 50);
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+<div class="scroll" id="imgdiv">
+    <ul class="main" id="imgul">
+        <li><img src="images/p1.jpg" alt=""></li>
+        <li><img src="images/p2.jpg" alt=""></li>
+        <li><img src="images/p3.jpg" alt=""></li>
+        <li><img src="images/p4.jpg" alt=""></li>
+        <li><img src="images/p5.jpg" alt=""></li>
+    </ul>
+    <ul class="extra" id="pointer">
+        <li class="current">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+</body>
+</html>
