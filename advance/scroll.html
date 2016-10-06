@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .scroll {
+            margin: 100px auto;
+            width: 640px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+
+        }
+
+        .scroll ul {
+            list-style: none;
+            width: 300%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .scroll li {
+            float: left;
+        }
+
+        .scroll li img {
+            vertical-align: top;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var x = 0;
+            var direction = -1;
+
+            function goscroll() {
+                x = x + (10 * direction);
+                if (x == 0) {
+                    direction = -1;
+                } else if (x == -960) {
+                    direction = 1;
+                }
+                $('#imgul').style.left = x + 'px';
+
+
+            }
+
+            function $(id) {
+                return document.getElementById(id.substr(1));
+            }
+
+            setInterval(goscroll, 100);
+        }
+    </script>
+</head>
+<body>
+<div class="scroll">
+    <ul id="imgul">
+        <li><img src="images/p1.jpg" alt=""></li>
+        <li><img src="images/p2.jpg" alt=""></li>
+        <li><img src="images/p3.jpg" alt=""></li>
+        <li><img src="images/p4.jpg" alt=""></li>
+        <li><img src="images/p5.jpg" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>
