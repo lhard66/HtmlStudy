@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        body {
+            background-color: #ccc;
+        }
+
+        .nav ul {
+            position: relative;
+        }
+
+        .nav {
+            width: 600px;
+            height: 50px;
+            margin: 100px auto;
+            background: url(images/rss.png) no-repeat right center #fff;
+            position: relative;
+        }
+
+        .nav li {
+            float: left;
+            width: 83px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .nav .cloud {
+            background: url(images/cloud.gif) no-repeat;
+            position: absolute;
+            width: 83px;
+            height: 42px;
+            top: 4px;
+            left: 0;
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+            function $(id) {
+                var name = id.substr(1);
+                var type = id.charAt(0);
+                switch (type) {
+                    case '#':
+                        return document.getElementById(name);
+                        break;
+                    default:
+                        return document.getElementsByTagName(id);
+                }
+            }
+
+            var nav = $('#nav');
+            var lis = nav.getElementsByTagName('ul')[0].children;
+            var cloud = $('#cloud');
+            var current=0;
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].onmouseover = function () {
+                    distance = this.offsetLeft;
+                    timer=setInterval(slowmove,25);
+                }
+                lis[i].onmouseout=function () {
+                    distance=current;
+                    clearInterval(timer);
+                }
+                lis[i].onclick=function () {
+                    current=this.offsetLeft;
+                }
+            }
+            //缓动效果
+            var leader = 0;
+            var distance = 0;
+
+            function slowmove() {
+                leader = leader + (distance - leader) / 10;
+                cloud.style.left = leader + 'px';
+            }
+
+            var timer = setInterval(slowmove, 25);
+
+        }
+    </script>
+</head>
+<body>
+<div class="nav" id="nav">
+    <i class="cloud" id="cloud"></i>
+    <ul>
+        <li>首页</li>
+        <li>新闻</li>
+        <li>体育</li>
+        <li>娱乐</li>
+        <li>生活</li>
+        <li>八卦</li>
+    </ul>
+    <i class="logo"></i>
+</div>
+</body>
+</html>
