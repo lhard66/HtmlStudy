@@ -68,18 +68,27 @@
             var nav = $('#nav');
             var lis = nav.getElementsByTagName('ul')[0].children;
             var cloud = $('#cloud');
-            var current=0;
+            var current = 0;
+            var timer;
+            var closetimer = 3000;
             for (var i = 0; i < lis.length; i++) {
                 lis[i].onmouseover = function () {
                     distance = this.offsetLeft;
-                    timer=setInterval(slowmove,25);
-                }
-                lis[i].onmouseout=function () {
-                    distance=current;
+                    //先清除还未关闭的定时器，再启动新定时器
                     clearInterval(timer);
+                    clearTimeout(closetimer);
+                    timer = setInterval(slowmove, 25);
                 }
-                lis[i].onclick=function () {
-                    current=this.offsetLeft;
+                lis[i].onmouseout = function () {
+                    distance = current;
+
+                    //3秒后关闭定时器
+                    closetimer = setTimeout(function () {
+                        clearTimeout(timer);
+                    }, 1800);
+                }
+                lis[i].onclick = function () {
+                    current = this.offsetLeft;
                 }
             }
             //缓动效果
@@ -89,10 +98,10 @@
             function slowmove() {
                 leader = leader + (distance - leader) / 10;
                 cloud.style.left = leader + 'px';
+                if (leader == distance) {
+                    clearInterval(timer);
+                }
             }
-
-            var timer = setInterval(slowmove, 25);
-
         }
     </script>
 </head>
