@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            height:999px;
+        }
+        .follow {
+            width: 136px;
+            height: 103px;
+            background: url(images/follow.jpg) no-repeat;
+            background-size: 136px 103px;
+            position: absolute;
+
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var timer;
+            document.onclick = function (event) {
+                targetX = event.clientX;
+                targetY = event.clientY;
+                console.log(targetX + '---' + targetY);
+                clearInterval(timer);
+                timer = setInterval(slowmove, 30);
+            }
+            //缓动函数
+            var leaderX = 0;
+            var leaderY = 0;
+            var targetX = 0;
+            var targetY = 0;
+            var obj = document.getElementById('followdiv');
+
+            function slowmove() {
+                leaderX = leaderX + (targetX - leaderX) / 10;
+                leaderY = leaderY + (targetY - leaderY) / 10;
+                obj.style.top = leaderY - obj.offsetHeight / 2 + 'px';
+                obj.style.left = leaderX - obj.offsetWidth / 2 + 'px';
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="follow" id="followdiv"></div>
+</body>
+</html>
