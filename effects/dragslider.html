@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .dragslider {
+            margin: 100px auto;
+            width: 500px;
+            height: 14px;
+            background-color: #C9C9C9;
+            position: relative;
+        }
+
+        .dragslider .dragbutton {
+            position: absolute;
+            top: -7px;
+            left: 0;
+            width: 10px;
+            height: 30px;
+            background-color: #18A15F;
+            cursor: pointer;
+        }
+
+        .dragslider .mask {
+            height: 100%;
+            width: 0;
+            background-color: #0D293E;
+        }
+
+        /*信息*/
+        .info {
+            height: 100px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function $(id) {
+                return document.getElementById(id.substr(1));
+            }
+
+            var slider = $('#slider');
+            var btndrag = $('#btndrag');
+            var passed = $('#passed');
+            btndrag.onmousedown = function () {
+                document.onmousemove = function (event) {
+                    var distance = getdistance(event);
+
+                    executeobj(distance);
+                    //解决：若选中拖动块中的内容，松开鼠标后依然移动的bug
+                    //window.getSelection为空说明IE不兼容，使用：selection.empty();
+                    window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+                    showinfo(distance);
+                }
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                }
+            }
+            slider.onclick = function (event) {
+                var distance = getdistance(event);
+                executeobj(distance);
+                showinfo(distance);
+
+            }
+            function getdistance(event) {
+                var evt = event || window.event;//兼容IE8
+                var distance = evt.clientX - slider.offsetLeft;
+                distance = distance < 0 ? 0 : distance;
+                distance = distance > 490 ? 490 : distance;
+                return distance;
+            }
+
+            function executeobj(distance) {
+                btndrag.style.left = distance + 'px';
+                passed.style.width = distance + 'px';
+            }
+
+            function showinfo(distance) {
+                //显示信息
+                $('#percent').innerText = parseInt(distance / 490 * 100) + ' %';
+                $('#long').innerText = distance + ' px';
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="dragslider" id="slider">
+    <div class="dragbutton" id="btndrag"></div>
+    <div class="mask" id="passed"></div>
+</div>
+<div class="info">
+    <p>已经拖动了：<span id="percent">0 %</span></p>
+    <p>已经移动了：<span id="long">0 px</span></p>
+</div>
+</body>
+</html>
