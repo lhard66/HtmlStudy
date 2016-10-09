@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .magnifier {
+            width: 350px;
+            height: 350px;
+            border: 1px solid #000;
+            /*overflow: hidden;*/
+            margin: 50px 300px;
+            position: relative;
+        }
+
+        .magnifier .product {
+            width: 350px;
+            height: 350px;
+            background: url(images/normal.jpg) no-repeat;
+            position: relative;
+        }
+
+        .magnifier .bigproduct {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            background: url(images/large.jpg) no-repeat;
+            background-position: 10px 10px;
+            position: absolute;
+            top: 0;
+            left: 355px;
+            display: none;
+        }
+
+        .magnifier .mask {
+            width: 90px;
+            height: 90px;
+            background-color: rgba(255, 239, 167, .5);
+            cursor: move;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function $(id) {
+                return document.getElementById(id.substr(1));
+            }
+
+            var maskobj = $('#mask');
+            var productobj = $('#product');
+            var bigproductobj = $('#bigproduct');
+            //鼠标移动变量
+            var evt, maskX, maskY, bigproductX, bigproductY;
+            var bignum = 500 / 350;
+
+            productobj.onmousemove = function (event) {
+                evt = event || window.event;
+                maskX = evt.clientX - this.parentNode.offsetLeft - maskobj.offsetWidth / 2;
+                maskY = evt.clientY - this.parentNode.offsetTop - maskobj.offsetHeight / 2;
+                maskX = maskX < 0 ? 0 : maskX;
+                maskX = maskX > 260 ? 260 : maskX;
+                maskY = maskY < 0 ? 0 : maskY;
+                maskY = maskY > 260 ? 260 : maskY;
+                maskobj.style.top = maskY + 'px';
+                maskobj.style.left = maskX + 'px';
+                //改变大图片的位置
+                bigproductX = maskX * bignum;
+                bigproductY = maskY * bignum;
+                bigproductobj.style.backgroundPositionX = -bigproductX + 'px';
+                bigproductobj.style.backgroundPositionY = -bigproductY + 'px';
+
+            }
+            productobj.onmouseover = function () {
+                bigproductobj.style.display = 'block';
+                maskobj.style.display = 'block';
+            }
+            productobj.onmouseout = function () {
+                bigproductobj.style.display = 'none';
+                maskobj.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="magnifier">
+    <div class="product" id="product">
+        <div class="mask" id="mask"></div>
+    </div>
+    <div class="bigproduct" id="bigproduct"></div>
+</div>
+</body>
+</html>
