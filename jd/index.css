@@ -5,13 +5,6 @@
     background-color: #D6D4D5;
     position: relative;
 }
-.close-icon{
-    position: absolute;
-    width:19px;
-    height: 19px;
-    background: url(images/close.png) no-repeat 0 -19px;
-
-}
 /*header 头部分*/
 .header {
     padding-top: 25px;

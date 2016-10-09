@@ -325,7 +325,25 @@ s, i, em {
     top:0;
     right:0;
 }
+.login .title{
+    height:30px;
+    background-color: #F7F7F7;
+    cursor: move;
+}
+.login .title span{
+    line-height:30px;
+    width:70px;
+    font-size:14px;
+    text-align: right;
+    color: #666;
+}
+.login .close-icon{
+    position: absolute;
+    width:19px;
+    height: 19px;
+    background: url(images/close.png) no-repeat 0 -19px;
 
+}
 
 
 

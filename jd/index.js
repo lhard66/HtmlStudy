@@ -1,9 +1,7 @@
 /**
  * Created by lhard on 10/04/2016.
  */
-function $(id) {
-    return document.getElementById(id);
-}
+
 var bannerNum = $('bigbannerul').children.length;
 
 for (var i = 1; i <= bannerNum; i++) {
