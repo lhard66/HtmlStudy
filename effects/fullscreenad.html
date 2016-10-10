@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul.introduct {
+            height: 100%;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .introduct li {
+            height: 100%;
+        }
+
+        .nav {
+            position: fixed;
+            top: 50px;
+            left: 50px;
+
+        }
+
+        .nav li {
+            height: 50px;
+        }
+
+        .nav li a {
+            cursor: pointer;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .nav li a:hover {
+            color: #ccc;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var colorjson = {
+                0: 'red',
+                1: 'blue',
+                2: 'pink',
+                3: 'black',
+                4: 'orange'
+            }
+
+            function $(id) {
+                return document.getElementById(id.substr(1));
+            }
+
+            var introductobj = $('#introductid');
+            var navobj = $('#navid');
+            for (var i = 0; i < introductobj.children.length; i++) {
+                introductobj.children[i].style.backgroundColor = colorjson[i];
+                navobj.children[i].index = i;
+                var leader = 0, target = 0, timer,timerclose;
+                navobj.children[i].onclick = function () {
+                    clearInterval(timer);
+                    clearTimeout(timerclose);
+
+                    target = introductobj.children[this.index].offsetTop;
+                    timer = setInterval(function () {
+                        leader = leader + (target - leader) / 10;
+                        window.scrollTo(0, leader);
+                        console.log(leader);
+                    }, 30)
+
+                    timerclose=setTimeout(function () {
+                        clearInterval(timer);
+                    },3000);
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<ul class="introduct" id="introductid">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<div class="nav">
+    <ul id="navid">
+        <li><a href="#">红色</a></li>
+        <li><a href="#">蓝色</a></li>
+        <li><a href="#">紫色</a></li>
+        <li><a href="#">黑色</a></li>
+        <li><a href="#">橙色</a></li>
+    </ul>
+</div>
+</body>
+</html>
