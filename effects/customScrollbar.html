@@ -23,6 +23,9 @@
 
         .box .content {
             padding: 5px 25px 3px 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
         .box .scroll {
@@ -39,8 +42,8 @@
             background-color: #C1C1C1;
             border-radius: 10px;
             position: absolute;
-            top:10px;
-            right:1px;
+            top: 0px;
+            right: 1px;
             display: none;
         }
     </style>
@@ -54,14 +57,35 @@
             var barobj = $('#bar');
             var boxobj = $('#box');
             var barheight = 500 * 500 / contentobj.offsetHeight;
+            //比率：(内容的长度-容器的高度)/(容器的高度-滚动条的长度)
+            var ratio = (contentobj.offsetHeight - 500) / (500 - barheight);
             barobj.style.height = barheight + 'px';
             barobj.style.display = 'block';
 
             barobj.onmouseover = function () {
                 this.style.backgroundColor = '#A8A8A8';
             }
-            barobj.onmouseout=function () {
-                this.style.backgroundColor='#C1C1C1';
+            barobj.onmouseout = function () {
+                this.style.backgroundColor = '#C1C1C1';
+            }
+            barobj.onmousedown = function (downevent) {
+                //先计算出已经拖拉的长度
+                var downevt = downevent || window.event;
+                var scrollgone = downevent.clientY - barobj.offsetTop;
+                var scrollLen, evt, contentgone;
+                document.onmousemove = function (event) {
+                    evt = event || window.event;
+                    scrollLen = evt.clientY - scrollgone;
+                    scrollLen = scrollLen < 0 ? 0 : scrollLen;
+                    scrollLen = scrollLen > 500 - barheight ? 500 - barheight : scrollLen;
+                    barobj.style.top = scrollLen + 'px';
+                    window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+                    //内容移动
+                    contentobj.style.top = -ratio * scrollLen + 'px';
+                }
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                }
             }
         }
     </script>
