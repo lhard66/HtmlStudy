@@ -37,3 +37,25 @@ $('loginTitle').onmousedown = function (downevent) {
         document.onmousemove = null;
     }
 }
+//点击登陆框外部隐藏登陆框
+$('cover').onclick=function () {
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('cover').style.display = 'none';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
