@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .word {
+            width: 600px;
+            height: 300px;
+        }
+
+        .sel {
+            width: 150px;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: #EEE;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .content {
+            position: relative;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function $(id) {
+                return document.getElementById(id.substr(1));
+            }
+
+            var selBoxobj = $('#selid');
+            var wordobj = $('#wordid');
+            var selX = 0, selY = 0, selwords;
+            document.onmouseup = function (event) {
+
+                //选选文字，兼容IE
+                var selForIe=document.selection;
+                //不为空，说明是Ie
+                if(selForIe){
+                    selwords=selForIe.createRange().text;
+                }else {
+                    //当不是ie浏览器时
+                    //选中的文字
+                    selwords=window.getSelection().toString();
+                }
+                //没有文字则不执行下面语句
+                if(!selwords){
+                    return;
+                }
+                var evt = event || window.event;
+                selX = evt.offsetX;
+                selY = evt.offsetY;
+                selBoxobj.innerText = selwords;
+                //计算显示位置
+                selBoxobj.style.top = selY + 10 + 'px';
+                selBoxobj.style.left = selX + 10 + 'px';
+                selBoxobj.style.display = 'block';
+
+            }
+            document.onmousedown = function (event) {
+                selBoxobj.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="content">
+    <div class="sel" id="selid"></div>
+    <div class="word" id="wordid">
+        　　经过为期1年多的现场认证，日前，宝钢ф210毫米大规格高强度、高韧性R5系泊链钢顺利通过世界主要权威船级社认证。这意味着宝钢成为全球首家具备极限规格R5系泊链钢供货能力的钢企。<br/>
+
+        　　此次通过认证的宝钢ф210毫米大规格超高强度R5系泊链钢，是目前全球已开发出的最高等级系泊链钢。<br/>
+
+        　　在产品研发试制过程中，宝钢股份钢管条钢事业部、宝钢中央研究院、宝钢股份炼钢厂和宝钢工程技术集团宝钢技术检化验事业部紧密协同、群策群力，不断调整优化工艺参数，为该产品最终顺利通过认证提供了有力支撑。<br/>
+
+        　　目前，宝钢R5系泊链钢产品已成功应用于中海油“海洋石油981”深海钻井平台等项目。该平台是目前世界上最先进的第六代深水半潜式钻井平台，工作环境苛刻，最大作业水深3000米，钻井深度可达10000米。<br/>
+
+        　　至此，宝钢已具备包括R4、R4S、R5级在内的全系列系泊链钢产品的供货能力。<br/>
+    </div>
+</div>
+</body>
+</html>
