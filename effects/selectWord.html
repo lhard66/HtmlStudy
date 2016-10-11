@@ -39,17 +39,17 @@
             document.onmouseup = function (event) {
 
                 //选选文字，兼容IE
-                var selForIe=document.selection;
+                var selForIe = document.selection;
                 //不为空，说明是Ie
-                if(selForIe){
-                    selwords=selForIe.createRange().text;
-                }else {
+                if (selForIe) {
+                    selwords = selForIe.createRange().text;
+                } else {
                     //当不是ie浏览器时
                     //选中的文字
-                    selwords=window.getSelection().toString();
+                    selwords = window.getSelection().toString();
                 }
                 //没有文字则不执行下面语句
-                if(!selwords){
+                if (!selwords) {
                     return;
                 }
                 var evt = event || window.event;
@@ -61,9 +61,28 @@
                 selBoxobj.style.left = selX + 10 + 'px';
                 selBoxobj.style.display = 'block';
 
+                console.log('aaaaa');
+
             }
             document.onmousedown = function (event) {
-                selBoxobj.style.display = 'none';
+                var evt = event || window.event;
+                var targetId = targetId = event.target ? event.target.id : event.srcElement.id;
+                if(targetId!='selid'){
+                    selBoxobj.style.display = 'none';
+                }
+            }
+            //此事件目的在于：释放鼠标时，阻止冒泡机制，触发document.onmouseup事件
+            selBoxobj.onmouseup=function (event) {
+                //阻止点击selid盒子时，触发document的冒泡机制
+                //此处的冒泡代码，不能封闭为一个函数
+                if(event&&event.stopPropagation){
+                    //w3c标准
+                    event.stopPropagation();
+                }else {
+                    //ie 6 7 8
+                    event.cancelBubble=true;
+                }
+                console.log('bbbbbbb');
             }
         }
     </script>
