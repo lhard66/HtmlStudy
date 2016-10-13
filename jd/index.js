@@ -24,6 +24,37 @@ for (var i = 0; i < bannerNum; i++) {
         $('bigbannerul').children[this.innerText - 1].className = 'slider-current';
     }
 }
+$('topbtnId').onmouseover = function () {
+    var textObj = this.children[1];
+    textObj.style.backgroundColor = '#C81623';
+    textObj.style.color = '#fff';
+    this.style.backgroundColor = '#C81623';
+    slowMoveAnimate(textObj, {left: -30});
+}
+$('topbtnId').onmouseout = function () {
+    var textObj = this.children[1];
+    textObj.style.backgroundColor = '#7A6E6E';
+    textObj.style.color = '#7A6E6E';
+    this.style.backgroundColor = '#7A6E6E';
+    slowMoveAnimate(textObj, {left: 0});
+}
+//跳至首页
+$('topbtnId').onclick = function () {
+    var leader = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var target = 0;
+    var timer = setInterval(function () {
+        leader = leader + (target - leader) / 10;
+        leader = Math.floor(leader);
+        window.scrollTo(0, leader);
+        if (leader == 0) {
+            clearInterval(timer);
+        }
+    }, 20);
+}
+window.onscroll = function () {
+
+
+}
 
 
 
