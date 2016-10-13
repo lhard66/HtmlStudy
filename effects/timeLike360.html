@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            vertical-align: center;
+        }
+
+        .main {
+            width: 320px;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+
+        .main .header {
+            width: 320px;
+            height: 247px;
+        }
+
+        .main .footer {
+            width: 320px;
+            height: 97px;
+        }
+
+        .footer img {
+            height: 97px;
+        }
+    </style>
+    <script src="flashFrame.js"></script>
+    <script>
+        window.onload = function () {
+            function $(id) {
+                return document.getElementById(id.substr(1));
+            }
+
+            var mainObj = $('#mainId');
+            var footerObj = $('#footerId');
+            document.onclick = function () {
+                slowMoveAnimate(footerObj, {height: 0}, function () {
+                    slowMoveAnimate(mainObj, {width: 0},null);
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="main" id="mainId">
+    <div class="header">
+        <img src="images/360startup_header.jpg" alt="">
+    </div>
+    <div class="footer" id="footerId">
+        <img src="images/360startup_footer.jpg" alt="">
+    </div>
+</div>
+</body>
+</html>

@@ -9,7 +9,9 @@ function getStyle(obj, attr) {
     }
 }
 //封闭缓动动画
-function slowMoveAnimate(obj, json) {
+function slowMoveAnimate(obj, json, callback) {
+    //先清除计时器
+    clearInterval(obj.timer);
     var current, step, flag;
     obj.timer = setInterval(function () {
         flag = true;
@@ -27,7 +29,10 @@ function slowMoveAnimate(obj, json) {
         }
         if (flag) {
             clearInterval(obj.timer);
+            //执行回调函数
+            if(callback){
+                callback();
+            }
         }
-        console.log('aaa');
     }, 30);
 }
