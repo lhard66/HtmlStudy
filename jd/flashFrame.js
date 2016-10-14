@@ -2,6 +2,7 @@
 function getStyle(obj, attr) {
     //IE
     if (obj.currentStyle) {
+        //得到所有的样式，无论内嵌还是外联。以前用offset家族，只能得到部分样式。
         return obj.currentStyle[attr];
     } else {
         //w3c标准

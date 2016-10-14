@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            vertical-align: center;
+        }
+
+        .slider {
+            margin: 100px auto;
+            width: 320px;
+            height: 260px;
+            position: relative;
+        }
+
+        .slider-main {
+            width: 320px;
+            height: 200px;
+        }
+
+        .slider-main ul {
+            width: 640px;
+        }
+
+        .slider-main li {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .slider-ctrl ul {
+            padding:8px 0 0 50px;
+        }
+
+        .slider-ctrl li {
+            float: left;
+            background: url(images/spiritEasySlider.png) no-repeat -19px -785px;
+            width: 34px;
+            height: 15px;
+            margin:0 5px;
+            cursor: pointer;
+            text-indent:20em;
+            overflow: hidden;
+        }
+        .slider-ctrl-btn{
+            height:35px;
+            width: 320px;
+            position: absolute;
+            top:85px;
+            left: 3px;
+        }
+        .slider-ctrl-btn .slider-left{
+            float: left;
+            width: 35px;
+            height: 35px;
+            background: url(images/spiritEasySlider.png) no-repeat 0 0;
+            cursor: pointer;
+        }
+        .slider-ctrl-btn .slider-right{
+            float: right;
+            width: 35px;
+            height: 35px;
+            background: url(images/spiritEasySlider.png) no-repeat 0 -44px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="slider">
+    <div class="slider-main">
+        <ul>
+            <li><a href="#"><img src="images/p1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/p2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/p3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/p4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/p5.jpg" alt=""></a></li>
+        </ul>
+    </div>
+    <div class="slider-ctrl">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <div class="slider-ctrl-btn">
+            <em class="slider-left"></em>
+            <em class="slider-right"></em>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
