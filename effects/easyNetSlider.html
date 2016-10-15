@@ -69,6 +69,8 @@
             position: absolute;
             top: 85px;
             left: 3px;
+            display: none;
+            opacity: .6;
         }
 
         .slider-ctrl-btn .slider-left {
@@ -107,7 +109,7 @@
         <ul id="ctrlId">
 
         </ul>
-        <div class="slider-ctrl-btn">
+        <div class="slider-ctrl-btn" id="ctrlBtnId">
             <em class="slider-left" id="sliderLeftId"></em>
             <em class="slider-right" id="sliderRightId"></em>
         </div>
@@ -194,12 +196,14 @@
         }
 
         var timer = setInterval(autoPlay, 3000);
-
+        var ctrlBtnObj = $('#ctrlBtnId');//用于控制显示隐藏的对象 
         sliderObj.onmouseover = function () {
             clearInterval(timer);
+            ctrlBtnObj.style.display='block';
         }
         sliderObj.onmouseout = function () {
             timer = setInterval(autoPlay, 3000);
+            ctrlBtnObj.style.display='none';
         }
     }
 </script>
