@@ -34,5 +34,5 @@ function slowMoveAnimate(obj, json, callback) {
                 callback();
             }
         }
-    }, 30);
+    }, 10);
 }

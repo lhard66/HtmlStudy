@@ -17,7 +17,7 @@
         }
 
         img {
-            vertical-align: center;
+            vertical-align: top;
         }
 
         .slider {
@@ -25,6 +25,7 @@
             width: 320px;
             height: 260px;
             position: relative;
+            overflow: hidden;
         }
 
         .slider-main {
@@ -39,11 +40,16 @@
         .slider-main li {
             position: absolute;
             top: 0;
+            left: 320px;
+        }
+
+        .slider-main .slider-main-current {
+            top: 0;
             left: 0;
         }
 
         .slider-ctrl ul {
-            padding:8px 0 0 50px;
+            padding: 8px 0 0 50px;
         }
 
         .slider-ctrl li {
@@ -51,39 +57,46 @@
             background: url(images/spiritEasySlider.png) no-repeat -19px -785px;
             width: 34px;
             height: 15px;
-            margin:0 5px;
+            margin: 0 5px;
             cursor: pointer;
-            text-indent:20em;
-            overflow: hidden;
+            text-indent: 20em;
+            /*overflow: hidden;*/
         }
-        .slider-ctrl-btn{
-            height:35px;
+
+        .slider-ctrl-btn {
+            height: 35px;
             width: 320px;
             position: absolute;
-            top:85px;
+            top: 85px;
             left: 3px;
         }
-        .slider-ctrl-btn .slider-left{
+
+        .slider-ctrl-btn .slider-left {
             float: left;
             width: 35px;
             height: 35px;
             background: url(images/spiritEasySlider.png) no-repeat 0 0;
             cursor: pointer;
         }
-        .slider-ctrl-btn .slider-right{
+
+        .slider-ctrl-btn .slider-right {
             float: right;
             width: 35px;
             height: 35px;
             background: url(images/spiritEasySlider.png) no-repeat 0 -44px;
             cursor: pointer;
         }
+
+        .slider-ctrl .slider-ctrl-current {
+            background: url(images/spiritEasySlider.png) no-repeat -19px -765px;
+        }
     </style>
 </head>
 <body>
-<div class="slider">
+<div class="slider" id="sliderId">
     <div class="slider-main">
-        <ul>
-            <li><a href="#"><img src="images/p1.jpg" alt=""></a></li>
+        <ul id="mainId">
+            <li class="slider-main-current"><a href="#"><img src="images/p1.jpg" alt=""></a></li>
             <li><a href="#"><img src="images/p2.jpg" alt=""></a></li>
             <li><a href="#"><img src="images/p3.jpg" alt=""></a></li>
             <li><a href="#"><img src="images/p4.jpg" alt=""></a></li>
@@ -91,19 +104,105 @@
         </ul>
     </div>
     <div class="slider-ctrl">
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
+        <ul id="ctrlId">
+
         </ul>
         <div class="slider-ctrl-btn">
-            <em class="slider-left"></em>
-            <em class="slider-right"></em>
+            <em class="slider-left" id="sliderLeftId"></em>
+            <em class="slider-right" id="sliderRightId"></em>
         </div>
     </div>
 </div>
+<script src="flashFrame.js" type="text/javascript"></script>
+<script>
+    window.onload = function () {
+        function $(id) {
+            return document.getElementById(id.substr(1));
+        }
+
+        var sliderLeftObj = $('#sliderLeftId');
+        var sliderRightObj = $('#sliderRightId');
+        var sliderObj = $('#sliderId');
+        var ctrlObj = $('#ctrlId');
+        var imgsObj = $('#mainId').children;
+        var imgsCount = imgsObj.length;
+
+        //初始化下部选择条
+        var li = null;
+        for (var i = 0; i < imgsCount; i++) {
+            li = document.createElement('li');
+            li.innerHTML = i;
+            ctrlObj.appendChild(li);
+        }
+        //得到创建的子节点集合
+        var ctrlChildObjs = ctrlObj.children;
+
+        var imgIndex = 0;
+        selImg(imgIndex);
+
+        function selRight(index, target) {
+            imgsObj[target].style.left = 320 + 'px';
+            slowMoveAnimate(imgsObj[target], {left: 0});
+            slowMoveAnimate(imgsObj[index], {left: -320});
+            imgIndex = target;
+            selImg(imgIndex);
+        }
+
+        function selLeft(index, target) {
+            imgsObj[target].style.left = -320 + 'px';
+            slowMoveAnimate(imgsObj[index], {left: 320});
+            slowMoveAnimate(imgsObj[target], {left: 0});
+            imgIndex = target;
+            selImg(imgIndex);
+
+        }
+
+        sliderLeftObj.onclick = function () {
+            var target = imgIndex - 1;
+            target = target < 0 ? imgsCount - 1 : target;
+            selLeft(imgIndex, target);
+        }
+        sliderRightObj.onclick = function () {
+            var target = Number(imgIndex) + 1;
+            target = target > imgsCount - 1 ? 0 : target;
+            selRight(imgIndex, target);
+        }
+        for (var k in ctrlChildObjs) {
+            ctrlChildObjs[k].onclick = function () {
+                var thisIndex = this.innerHTML;
+                if (imgIndex > thisIndex) {
+                    selLeft(imgIndex, thisIndex);
+                } else if (imgIndex < thisIndex) {
+                    selRight(imgIndex, thisIndex);
+                }
+            }
+        }
+        //自动播放
+        function autoPlay() {
+            var target = imgIndex + 1;
+            target = target > imgsCount - 1 ? 0 : target;
+            selRight(imgIndex, target);
+        }
+
+        function selImg(index) {
+            //清除所有的
+            for (var i = 0; i < imgsCount; i++) {
+                ctrlChildObjs[i].removeAttribute('class');
+            }
+            //添加被选中的
+            ctrlChildObjs[index].className = 'slider-ctrl-current';
+        }
+
+        var timer = setInterval(autoPlay, 3000);
+
+        sliderObj.onmouseover = function () {
+            clearInterval(timer);
+        }
+        sliderObj.onmouseout = function () {
+            timer = setInterval(autoPlay, 3000);
+        }
+    }
+</script>
 </body>
 </html>
 
