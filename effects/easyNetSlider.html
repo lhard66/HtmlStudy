@@ -143,6 +143,7 @@
         selImg(imgIndex);
 
         function selRight(index, target) {
+//            console.log('MM:' + index + '---' + target);
             imgsObj[target].style.left = 320 + 'px';
             slowMoveAnimate(imgsObj[target], {left: 0});
             slowMoveAnimate(imgsObj[index], {left: -320});
@@ -151,6 +152,7 @@
         }
 
         function selLeft(index, target) {
+//            console.log('GG:' + index + '---' + target);
             imgsObj[target].style.left = -320 + 'px';
             slowMoveAnimate(imgsObj[index], {left: 320});
             slowMoveAnimate(imgsObj[target], {left: 0});
@@ -173,6 +175,7 @@
             ctrlChildObjs[k].onclick = function () {
                 var thisIndex = this.innerHTML;
                 if (imgIndex > thisIndex) {
+//                    console.log(imgIndex + '---' + thisIndex);
                     selLeft(imgIndex, thisIndex);
                 } else if (imgIndex < thisIndex) {
                     selRight(imgIndex, thisIndex);
@@ -181,7 +184,7 @@
         }
         //自动播放
         function autoPlay() {
-            var target = imgIndex + 1;
+            var target = Number(imgIndex) + 1;
             target = target > imgsCount - 1 ? 0 : target;
             selRight(imgIndex, target);
         }
@@ -196,14 +199,14 @@
         }
 
         var timer = setInterval(autoPlay, 3000);
-        var ctrlBtnObj = $('#ctrlBtnId');//用于控制显示隐藏的对象 
+        var ctrlBtnObj = $('#ctrlBtnId');//用于控制显示隐藏的对象
         sliderObj.onmouseover = function () {
             clearInterval(timer);
-            ctrlBtnObj.style.display='block';
+            ctrlBtnObj.style.display = 'block';
         }
         sliderObj.onmouseout = function () {
             timer = setInterval(autoPlay, 3000);
-            ctrlBtnObj.style.display='none';
+            ctrlBtnObj.style.display = 'none';
         }
     }
 </script>
