@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="test"></div>
+<script>
+    window.onload = function () {
+        var count = 0;
+        window.onresize = throttle(function () {
+            document.getElementById('test').innerHTML = document.body.clientWidth || document.documentElement.clientWidth;
+            console.log(count++);
+        }, 500);
+    }
+
+    function throttle(delay, callback) {
+        var timer = null;
+        return function () {
+            clearTimeout(timer);
+            timer = setTimeout(delay, callback);
+        }
+    }
+</script>
+</body>
+</html>
