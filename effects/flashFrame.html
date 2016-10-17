@@ -32,10 +32,10 @@
         var bigObj = $('#bigId');
         var moveobj = $('#moveid');
         littleObj.onclick = function () {
-            slowMoveAnimate(moveobj, {left: 300, top: 200});
+            slowMoveAnimate(moveobj, {left: 300, top: 200, opacity: 30},20);
         }
         bigObj.onclick = function () {
-            slowMoveAnimate(moveobj, {left: 600, top: 40});
+            slowMoveAnimate(moveobj, {left: 600, top: 40, opacity: 90},80);
 
         }
     }
