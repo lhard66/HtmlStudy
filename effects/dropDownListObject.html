@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .all {
+            width: 330px;
+            height: 30px;
+            background: url(images/bg.jpg) no-repeat;
+            margin: 100px auto;
+            line-height: 30px;
+            text-align: center;
+            padding-left: 10px;
+            margin-bottom: 0;
+        }
+
+        .all ul li {
+            width: 100px;
+            height: 30px;
+            background: url(images/libg.jpg);
+            float: left;
+            margin-right: 10px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .all ul ul {
+            position: absolute;
+            left: 0;
+            top: 30px;
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+<div class="all" id="list">
+    <ul>
+        <li id="oneId">一级菜单
+            <ul>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单
+            <ul>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单
+            <ul>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<script>
+    window.onload = function () {
+        function List(obj) {
+            this.obj = obj;
+        }
+
+        List.prototype.init = function () {
+            var that = this;
+            this.obj.onmouseover = function () {
+                //此处为，封装对象
+                that.show(this.children[0]);
+            }
+            this.obj.onmouseout = function () {
+                //此处为，未封装对象
+                this.children[0].style.display = 'none';
+            }
+        }
+        List.prototype.show = function (obj) {
+            obj.style.display = 'block';
+        }
+
+        //遍历初始化每个对象
+        var all = document.getElementById('list');
+        var all_children = all.children[0].children;
+        for (var i = 0; i < all_children.length; i++) {
+            var list = new List(all_children[i]);
+            list.init();
+        }
+
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
