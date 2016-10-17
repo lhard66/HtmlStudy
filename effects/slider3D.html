@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        a {
+            outline: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .wrap {
+            width: 1200px;
+            margin: 50px auto;
+        }
+
+        .slider {
+            height: 700px;
+            position: relative;
+            background-color: #ccc;
+        }
+
+        .slider li {
+            position: absolute;
+            width: 800px;
+            top: 200px;
+            left: 200px;
+            z-index: 5;
+        }
+
+        .slider .extra {
+            height: 76px;
+            width: 100%;
+            position: absolute;
+            top: 230px;
+            left: 0;
+            z-index: 10;
+            display: none;
+        }
+
+        .slider .extra a {
+            display: block;
+            width: 76px;
+            height: 112px;
+        }
+
+        .slider .extra .prev {
+            float: left;
+            background: url(images/prev.png) no-repeat;
+        }
+
+        .slider .extra .next {
+            float: right;
+            background: url(images/next.png) no-repeat;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="slider" id="sliderId">
+        <ul id="imgsId">
+            <li class="s1"><a href="#"><img src="images/slidepic1.jpg" alt=""></a></li>
+            <li class="s2"><a href="#"><img src="images/slidepic2.jpg" alt=""></a></li>
+            <li class="s3"><a href="#"><img src="images/slidepic3.jpg" alt=""></a></li>
+            <li class="s4"><a href="#"><img src="images/slidepic4.jpg" alt=""></a></li>
+            <li class="s5"><a href="#"><img src="images/slidepic5.jpg" alt=""></a></li>
+            <li class="s6"><a href="#"><img src="images/slidepic6.jpg" alt=""></a></li>
+        </ul>
+        <div class="extra" id="extraId">
+            <a href="javascript:;" class="prev" id="prevId"></a><a href="javascript:;" class="next" id="nextId"></a>
+        </div>
+    </div>
+</div>
+<script src="flashFrame.js"></script>
+<script>
+    window.onload = function () {
+        var dataImg = [
+            {
+                top: 200,
+                left: 200,
+                width: 800,
+                opacity: 100,
+                z: 5
+            }, {
+                top: 100,
+                left: 0,
+                width: 600,
+                opacity: 80,
+                z: 4
+            }
+            , {
+                top: 50,
+                left: 50,
+                width: 400,
+                opacity: 60,
+                z: 3
+            }, {
+                top: 15,
+                left: 425,
+                width: 350,
+                opacity: 30,
+                z: 0
+            }, {
+                top: 50,
+                left: 750,
+                width: 400,
+                opacity: 60,
+                z: 1
+            }, {
+                top: 100,
+                left: 600,
+                width: 600,
+                opacity: 80,
+                z: 2
+            }
+        ];
+        var imgsObj = document.getElementById('imgsId').children;
+        var sliderObj = document.getElementById('sliderId');
+        var extraObj = document.getElementById('extraId');
+        var prevObj = document.getElementById('prevId');
+        var nextObj = document.getElementById('nextId');
+        sliderObj.addEventListener('mouseout', function () {
+            extraObj.style.display = 'none';
+        }, false);
+        sliderObj.addEventListener('mouseover', function () {
+            extraObj.style.display = 'block';
+        }, false);
+        nextObj.addEventListener('click',function () {
+            //删除最后一个元素，添加至第一位
+            var delObj=dataImg.pop();
+            dataImg.unshift(delObj);
+            revolveImg();
+        });
+        prevObj.addEventListener('click',function () {
+            //删除第一个元素，添加至最后
+            var delObj=dataImg.shift();
+            dataImg.push(delObj);
+            revolveImg();
+        })
+        function revolveImg() {
+            for (var k in dataImg) {
+                var data = dataImg[k];
+                slowMoveAnimate(imgsObj[k], {
+                    top: data.top,
+                    left: data.left,
+                    width: data.width,
+                    opacity: data.opacity,
+                    zIndex: data.z
+                }, 25);
+            }
+        }
+
+        revolveImg();
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
