@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .content{
+            margin:100px auto;
+            width:200px;
+        }
+        .info{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            border-radius: 10px;
+            position: relative;
+        }
+        .info::after{
+            content: '';
+            width: 0;
+            height: 0;
+            border:10px solid transparent;
+            border-right-color: red;
+            position: absolute;
+            top:20px;
+            left:-20px;
+        }
+        .msg{
+            margin-top:100px;
+            width: 200px;
+            height: 100px;
+            border-radius: 10px;
+            background-color: red;
+            position: relative;
+        }
+        .msg::after{
+            content: '';
+            width: 30px;
+            height: 30px;
+            border-style:solid;
+            border-color: red;
+            border-width:0 0  30px 30px;
+            border-radius: 0 0 60px 0;
+            position: absolute;
+            top:10px;
+            right:-20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="info"></div>
+        <div class="msg"></div>
+    </div>
+</body>
+</html>
