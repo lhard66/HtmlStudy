@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .content{
+            margin:50px auto;
+            width: 180px;
+        }
+        .yinyang {
+            width: 180px;
+            height: 90px;
+            background-color: red;
+
+            border: 0 solid green;
+            border-bottom-width: 90px;
+            border-radius: 90px;
+        }
+
+        .bagua {
+            margin-top: 50px;
+            width: 180px;
+            height: 90px;
+            background-color: red;
+
+            border: 0 solid green;
+            border-bottom-width: 90px;
+            border-radius: 90px;
+
+            position: relative;
+        }
+
+        .bagua::before, .bagua::after {
+            position: absolute;
+            top: 50%;
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 35px solid green;
+            border-radius: 45px;
+
+        }
+
+        .bagua::before {
+            left: 0;
+            background-color: red;
+        }
+
+        .bagua::after {
+            right: 0;
+            background-color: green;
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="yinyang"></div>
+    <div class="bagua"></div>
+</div>
+</body>
+</html>
