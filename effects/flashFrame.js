@@ -9,10 +9,10 @@ function getStyle(obj, attr) {
     }
 }
 //封闭缓动动画
-function slowMoveAnimate(obj, json, ms, callback) {
+function slowMoveAnimate(obj, json, millisecond, callback) {
     //先清除计时器
     clearInterval(obj.timer);
-    var current, step, flag;
+    var current, step, flag, ms = millisecond || 30;
     obj.timer = setInterval(function () {
         flag = true;
         for (var attr in json) {
