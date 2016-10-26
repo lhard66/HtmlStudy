@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width:800px;
+            height:620px;
+            display: flex;
+            flex-direction:column;
+            justify-content: space-between;
+        }
+        header{
+            height:50px;
+            background-color: green;
+        }
+        nav{
+            height: 40px;
+            background-color: pink;
+            margin-top:5px;
+
+        }
+        nav ul{
+            list-style: none;
+            display: flex;
+        }
+        nav li{
+            flex:1;
+            text-align: center;
+            line-height:40px;
+            cursor: pointer;
+        }
+
+
+        section{
+            background-color: yellow;
+            display: flex;
+            flex:1;
+        }
+        aside{
+            background-color: blue;
+            flex:1;
+        }
+        article{
+            background-color: purple;
+
+            flex:2;
+        }
+
+
+        footer{
+            height: 30px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>对话</li>
+                <li>分类</li>
+                <li>订单</li>
+                <li>购物车</li>
+                <li>选项</li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <aside></aside>
+        <article>
+            <!--<header></header>-->
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <!--<footer></footer>-->
+        </article>
+    </section>
+    <footer></footer>
+</body>
+</html>
