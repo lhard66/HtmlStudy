@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            background: linear-gradient(to bottom, #FFA5A5 0%, #FFD3D3 100%);
+            height: 100%;
+        }
+
+        .heart {
+            width: 250px;
+            height: 250px;
+            margin: 80px auto;
+            position: relative;
+        }
+        .heart .heart-common{
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            animation: beat 0.7s ease 0s infinite normal;
+        }
+        @keyframes beat {
+            0%{
+                transform: scale(1) rotate(225deg);
+                box-shadow: 0 0 40px #D5093C;
+            }
+            50%{
+                transform: scale(1.1) rotate(225deg);;
+                box-shadow: 0 0 70px #D5093C;
+            }
+            100%{
+                transform: scale(1) rotate(225deg);;
+                box-shadow: 0 0 40px #D5093C;
+            }
+        }
+        .heart .bottom-part {
+            background: linear-gradient(-45deg, #B80734 0%, #D5093C 40%);
+            transform: rotate(45deg);
+            border-radius: 8px;
+            bottom: 40px;
+            left: 50px;
+        }
+
+        .heart .circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            background: linear-gradient(-90deg, #F50A45 0%, #D5093C 40%);
+
+            /*box-shadow: 0 0 70px #D5093C;*/
+            /*transform: scale(1) rotate(0deg);*/
+
+
+        }
+
+        .heart .left-part {
+            left: 2px;
+            top: 11px;
+            z-index: 2;
+        }
+
+        .heart .right-part {
+            top: 11px;
+            right: 2px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="heart">
+    <div class="left-part circle heart-common"></div>
+    <div class="right-part circle heart-common"></div>
+    <div class="bottom-part heart-common"></div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
