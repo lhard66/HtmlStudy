@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #666;
+        }
+
+        .w {
+            width: 350px;
+            margin: 100px auto;
+        }
+
+        .progress {
+            width: 350px;
+            height: 25px;
+            border-radius: 3px;
+            background-color: #1a1a1a;
+        }
+
+        .progress .completed {
+            height: 100%;
+            width: 150px;
+            border-radius: 3px;
+            background-color: #34c2e3;
+            background-size:30px 30px;
+            background-image: linear-gradient(135deg,
+                                            rgba(255, 255, 255, .15) 25%,
+                                            transparent 25%,
+                                            transparent 50%,
+                                            rgba(255, 255, 255, .15) 50%,
+                                            rgba(255, 255, 255, .15) 75%,
+                                            transparent 75%,
+                                            transparent);
+            /*background-repeat:no-repeat;*/
+            animation: scroll-animate 3s linear infinite;
+        }
+        @keyframes scroll-animate {
+            0%{
+                background-position: 0 0;
+            }
+            100%{
+                background-position: 60px 0;
+            }
+        }
+    </style>
+
+</head>
+<body>
+<div class="w">
+    <div class="progress">
+        <div class="completed"></div>
+    </div>
+</div>
+</body>
+</html>
