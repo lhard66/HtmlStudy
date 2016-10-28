@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .content {
+            transition: all 2s;
+        }
+
+        .go {
+            transform: rotate(300deg);
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <img src="images/zhuan.jpg" alt="" id="zhuan_img">
+</div>
+<script>
+    (function () {
+        var zhuanObj = document.getElementById('zhuan_img');
+        zhuanObj.addEventListener('click', function () {
+            var zhuanClass = this.className;
+            if (zhuanClass) {
+                this.className = '';
+            } else {
+                this.className = 'go';
+            }
+        })
+    })();
+</script>
+</body>
+</html>
