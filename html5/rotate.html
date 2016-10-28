@@ -7,28 +7,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .content {
-            transition: all 2s;
-        }
 
         .go {
-            transform: rotate(300deg);
+            transition: all 1s;
+            transform: rotate(0deg);
         }
+
     </style>
 </head>
 <body>
 <div class="content">
-    <img src="images/zhuan.jpg" alt="" id="zhuan_img">
+    <img src="images/zhuan.jpg" alt="" class="go" id="zhuan_img">
 </div>
 <script>
     (function () {
         var zhuanObj = document.getElementById('zhuan_img');
         zhuanObj.addEventListener('click', function () {
-            var zhuanClass = this.className;
-            if (zhuanClass) {
-                this.className = '';
+            var zhuanClass = this.style.transform;
+            if (zhuanClass=='') {
+                this.style.transform = 'rotate(360deg)';
             } else {
-                this.className = 'go';
+                this.style.removeProperty('transform');
             }
         })
     })();
