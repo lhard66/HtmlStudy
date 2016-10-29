@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            margin: 50px auto;
+            width: 300px;
+        }
+
+        .circle {
+            width: 200px;
+            height: 200px;
+            background-color: #D9D9D9;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            z-index: 10;
+        }
+
+        .circle::after {
+            content: "";
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: url(images/smilelittle.png) -3px -4px/170px 170px no-repeat #DDD;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .circle .common-part {
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+        }
+
+        .circle .left-part {
+            left: 0;
+        }
+
+        .circle .right-part {
+            right: 0;
+        }
+
+        .circle .common-scroll {
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+            transform: rotate(0deg);
+            animation: turn 10s linear infinite;
+
+        }
+
+        .circle .left-part .left-scroll {
+            transform-origin: right center;
+        }
+
+        .circle .right-part .right-scroll {
+            transform-origin: left center;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes turn {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(180deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            75% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="circle">
+        <div class="common-part left-part">
+            <div class="common-scroll left-scroll"></div>
+        </div>
+        <div class="common-part right-part">
+            <div class="common-scroll right-scroll"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
