@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .piano {
+            margin: 100px auto;
+            width: 568px;
+        }
+
+        ul {
+            list-style: none;
+            border: 1px solid black;
+            height: 30px;
+        }
+
+        .piano li {
+            float: left;
+            width: 80px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            border-right: 1px dashed black;
+        }
+
+        .piano ins {
+            display: block;
+            width: 100%;
+            height: 100%;
+            /*background-color: red;*/
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+    </style>
+</head>
+<body>
+<div class="piano">
+    <ul id="music_nav">
+        <li><span>哆哆</span>
+            <ins></ins>
+        </li>
+        <li><span>唻唻</span>
+            <ins></ins>
+        </li>
+        <li><span>咪咪</span>
+            <ins></ins>
+        </li>
+        <li><span>发发</span>
+            <ins></ins>
+        </li>
+        <li><span>嗖嗖</span>
+            <ins></ins>
+        </li>
+        <li><span>啦啦</span>
+            <ins></ins>
+        </li>
+        <li class="last"><span>哂哂</span>
+            <ins></ins>
+        </li>
+    </ul>
+</div>
+<div>
+    <audio src="music/1.ogg"></audio>
+    <audio src="music/2.ogg"></audio>
+    <audio src="music/3.ogg"></audio>
+    <audio src="music/4.ogg"></audio>
+    <audio src="music/5.ogg"></audio>
+    <audio src="music/6.ogg"></audio>
+    <audio src="music/7.ogg"></audio>
+</div>
+
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        $('#music_nav li:last').css('border-right', 0);
+        var colorKeys = [
+            "red",
+            "blue",
+            "green",
+            "pink",
+            "yellow",
+            "purple",
+            "orange"
+        ];
+
+        $('#music_nav ins').each(function (index) {
+            $(this).css('background-color', colorKeys[index]);
+        });
+
+        var audioObjs = document.getElementsByTagName('audio');
+        $('#music_nav li').on('mouseover', function () {
+            $(this).children('ins').stop().animate({top: -30}, 200);
+            //get方法是将jQuery对象转换为DOM，因为JQuery对象没有load和play方法
+//            $('audio').get($(this).index()).load();
+            $('audio').get($(this).index()).play();
+            audioObjs[1].play();
+        }).on('mouseleave', function () {
+            $(this).children('ins').stop().animate({top: 0}, 200);
+        })
+        //键盘事件
+        $(window).on('keydown', function (event) {
+            if (event.keyCode < 97 || event.keyCode > 103) {
+                console.log('error');
+                return;
+            }
+            var index = event.keyCode - 97;
+            var liObj = $('#music_nav li');
+            liObj.eq(index).trigger('mouseover');
+            setTimeout(function () {
+                liObj.eq(index).trigger('mouseleave');
+            }, 200);
+        })
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
