@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            margin: 100px 800px;
+        }
+
+        .fan {
+            width: 300px;
+            height: 200px;
+            background: url(images/GEM1.png) no-repeat;
+            overflow: hidden;
+        }
+
+        .fan .img-top {
+            transition: transform 1s ease-out;
+
+            transform-origin: left top;
+            transform: rotate(120deg);
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="fan" id="fan_box">
+        <div class="img-top" id="img_box">
+            <img src="images/GEM2.png" alt="">
+        </div>
+    </div>
+</div>
+<script src="../js/jquery-3.1.1.js"></script>
+<script src="mouseDirection.js"></script>
+
+<script>
+    $(function () {
+        $('#fan_box').on('mouseenter', function (event) {
+            var direction = mouseDirection(event, this);
+            enterBox(direction);
+        }).on('mouseleave', function (event) {
+            leaveBox(mouseDirection(event, this));
+        })
+        //数组对象
+        var origins = [
+            'left top',
+            'right top',
+            'right bottom',
+            'left bottom'
+        ];
+
+        function enterBox(num) {
+            $('#img_box').css('transform-origin', origins[num]).css('transform', 'rotate(0deg)');
+        }
+
+        function leaveBox(num) {
+            $('#img_box').css('transform-origin', origins[num]).css('transform', 'rotate(120deg)');
+        }
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
