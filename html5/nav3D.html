@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .content {
+            margin: 100px 200px;
+        }
+
+        .nav ul {
+            list-style: none;
+            position: relative;
+        }
+
+        .nav li {
+            float: left;
+            width: 100px;
+            height: 50px;
+            background-color: #2195DE;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .nav li::after {
+            content: attr(data-info);
+            width: 100px;
+            height: 50px;
+            background-color: #0965A0;
+            line-height: 50px;
+            text-align: center;
+            display: block;
+            /*position: absolute;*/
+            /*top:0;*/
+            transform: rotatex(0deg);
+            transform-origin:top;
+        }
+    </style>
+
+</head>
+<body>
+<div class="content">
+    <div class="nav">
+        <ul>
+            <li><a href="#" data-info="HOME">首页</a></li>
+            <li><a href="#" data-info="SPORT">体育</a></li>
+            <li><a href="#" data-info="ENTERTAIN">娱乐</a></li>
+            <li><a href="#" data-info="LIVE">生活</a></li>
+            <li><a href="#" data-info="FINANCE">财经</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
