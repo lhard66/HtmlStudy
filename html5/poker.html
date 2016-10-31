@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .content{
+            margin:100px 200px;
+        }
+
+        .poker{
+            width: 310px;
+            height: 438px;
+            border: 1px solid black;
+            perspective: 700px;
+            perspective-origin: bottom;
+        }
+        .poker>img{
+            transition: all 3s;
+            transform-origin: bottom;
+        }
+        .poker:hover>img{
+            transform: rotatex(60deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="poker">
+            <img src="images/pk1.png" alt="">
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
