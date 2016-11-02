@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .content{
+            margin:300px 300px;
+        }
+        ul{
+            list-style: none;
+            transition: all 8s;
+            transform-style: preserve-3d;
+            position: relative;
+
+            /*transform: rotateX(380deg)  rotateY(680deg);*/
+            transform: rotateX(-20deg)  rotateY(-40deg);
+        }
+        ul li{
+            width:200px;
+            height: 200px;
+            text-align: center;
+            line-height:200px;
+            position: absolute;
+        }
+        ul li:nth-child(1){
+            background-color: rgba(255, 0, 0, .6);
+            transform: rotatex(0deg);
+
+        }
+        ul li:nth-child(2){
+            background-color: rgba(0, 255, 0, .6);
+            transform: rotatex(-90deg) translatey(100px) translatez(100px);
+        }
+        ul li:nth-child(3){
+            background-color: rgba(0, 0, 255, .6);
+            transform: rotatex(-180deg) translatez(200px);
+        }
+        ul li:nth-child(4){
+            background-color: rgba(255, 255, 0, .6);
+            transform: rotatex(90deg) translatey(-100px) translatez(100px);
+
+        }
+        ul li:nth-child(5){
+            background-color: rgba(255, 0, 255, .6);
+            transform: rotatey(-90deg) translatex(-100px) translatez(-100px);
+        }
+        ul li:nth-child(6){
+            background-color: rgba(255, 125,125, .6);
+            transform: rotatey(90deg) translatex(100px) translatez(100px);
+        }
+
+        ul:hover {
+            transform: rotateX(340deg)  rotateY(320deg);
+        }
+
+    </style>
+</head>
+<body>
+<div class="content">
+    <ul>
+        <li>第一个盒子</li>
+        <li>第二个盒子</li>
+        <li>第三个盒子</li>
+        <li>第四个盒子</li>
+        <li>第五个盒子</li>
+        <li>第六个盒子</li>
+    </ul>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
