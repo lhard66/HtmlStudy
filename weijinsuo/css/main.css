@@ -3,11 +3,53 @@
     1.样式都通过ID去限定。
     2.尽可能多使用直接子代选择器
 */
-
-
+*{
+    margin: 0;
+    padding: 0;
+}
 /*Bootstrap扩展*/
+.btn-login {
+    padding: 5px;
+}
 
-
+.navbar-gold{
+    background-color: #fff;
+    border-color: #F5F5F5;
+    margin-bottom: 0;
+}
+.navbar-gold .navbar-brand{
+    height: 80px;
+    color: #777;
+}
+.nav>li>a{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.navbar-gold .navbar-brand:hover,
+.navbar-gold .navbar-brand:focus {
+    color: #5e5e5e;
+    background-color: transparent;
+}
+.navbar-gold .navbar-nav>li>a:hover,
+.navbar-gold .navbar-nav>li>a:focus{
+    background-color: transparent;
+    border-bottom:2px solid #E92322;
+}
+.navbar-gold .navbar-nav > .active > a,
+.navbar-gold .navbar-nav > .active > a:hover,
+.navbar-gold .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: transparent;
+    border-bottom: 2px solid #E92322;
+}
+.navbar-gold .navbar-toggle{
+    border-color: #ddd;
+    margin-top: 23px;
+    margin-bottom: 23px;
+}
+.navbar-gold .navbar-toggle .icon-bar{
+    background-color: #888;
+}
 /*公共样式*/
 
 body {
@@ -23,46 +65,91 @@ a:hover {
     text-decoration: none;
 }
 
-
-/*引入新字体*/
+    /*引入新字体*/
 
 @font-face {
     font-family: 'itcast';
     src: url('../font/MiFie-Web-Font.eot') format('embedded-opentype'), url('../font/MiFie-Web-Font.svg') format('svg'), url('../font/MiFie-Web-Font.ttf') format('truetype'), url('../font/MiFie-Web-Font.woff') format('woff');
 }
 
-
-/*设置字体选择器，以下为属性选择符，第一个是以“icon-开头”，第二个是包含“ icon-”，空格一定要写*/
+    /*设置字体选择器，以下为属性选择符，第一个是以“icon-开头”，第二个是包含“ icon-”，空格一定要写*/
 
 [class^="icon-"],
 [class*=" icon-"] {
     font-family: itcast;
     font-style: normal;
 }
-
-
+.icon-logo::before{
+    content: '\e920';
+}
+.icon-logoword::before{
+    content: '\e93e';
+}
 /*以上字体中包含字体图标，为使下面内容生效，故要引入上面的字体*/
 
 .icon-phone::before {
     content: "\e908";
     font-size: 13px;
 }
+.icon-tel::before{
+    content: "\e909";
+    font-size:15px;
 
+}
+/*头部样式*/
 
-/*头部样式*/  
-
-#header {  
-    height: 200px;
+#header {
+    /*height: 200px;*/
 }
 
-#header>.topbar {
+#header > .topbar {
     height: 40px;
     border-bottom: 1px solid #C0C0C0;
     line-height: 40px;
 }
 
-#header>.topbar>.container>.row>div {
+#header > .topbar > .container > .row > div {
     height: 40px;
     font-size: 12px;
     color: #888;
+    border-right:1px solid #C0C0C0;
 }
+#header > .topbar > .container > .row > div:last-child {
+    border-width:0;
+}
+#header .icon-logo{
+    font-size: 50px;
+    color: #E92322;
+    vertical-align: middle;
+    line-height:50px;
+}
+#header .icon-logoword{
+    font-size: 32px;
+    color: #333;
+    vertical-align: middle;
+}
+
+/*大banner导航*/
+
+#carousel-example-generic-test .carousel-inner .item{
+    height: 410px;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+
+
+#main_banner .carousel-inner .item{
+    height: 410px;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+
+
+
+
+
+
+
+
+
+
