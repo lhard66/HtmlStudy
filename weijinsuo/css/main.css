@@ -252,9 +252,49 @@ a:hover {
     color: #E92322;
 }
 /*产品推荐*/
-
-
-
+#products{
+    background-color: #F0F0F0;
+    padding:40px 0;
+}
+#products .nav-tabs{
+    padding-left: 20px;
+}
+#products .nav-tabs>li>a{
+    background-color: transparent;    
+    border:0;
+    font-size: 16px;
+    color: #333;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+#products .nav-tabs>li.active>a{
+    border-bottom:4px solid #E92322;
+}
+#products .tab-content{
+    padding:20px 0;
+}
+#products .tab-content>.tab-pane .panel-ticket{
+    border:0;
+    border-radius: 0;
+    box-shadow: 1px 1px 5px #CCC;
+}
+#products .tab-content>.tab-pane .active{
+    background-color: #E92322;
+    color: #FFF;
+}
+#products .tab-content>.tab-pane .panel-ticket>.panel-heading{
+    float: right;
+    width: 120px;
+    padding: 0;
+    height: 150px;
+    border-left:1px dashed #C0C0C0;
+    text-align: center;
+    position: relative;
+}
+#products .tab-content>.tab-pane .panel-ticket>.panel-body{
+    margin-right: 120px;
+    height: 150px;
+}
 
 
 
