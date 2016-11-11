@@ -8,6 +8,11 @@
     padding: 0;
 }
 
+/*测试样式*/
+body {
+    height: 9999px;
+}
+
 /*Bootstrap扩展*/
 .btn-login {
     padding: 5px;
@@ -63,11 +68,11 @@
 
 body {
     font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
-    color: #888;
+    color: #333;
 }
 
 a {
-    color: #888;
+    color: #333;
 }
 
 a:hover {
@@ -167,16 +172,20 @@ a:hover {
     padding: 50px 0;
     border-bottom: 1px solid #C0C0C0;
 }
+
 #feature .row a {
     color: #333;
 }
+
 #feature .row a:hover {
     color: #E61E25;
 }
-#feature .row>div{
-    margin-top:20px;
-    margin-bottom:20px;
+
+#feature .row > div {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
+
 #feature .row a .media-left > i {
     font-size: 34px;
 }
@@ -184,29 +193,65 @@ a:hover {
 .icon-uniE903:before {
     content: '\e903';
 }
+
 .icon-uniE901:before {
     content: '\e901';
 }
+
 .icon-uniE900:before {
     content: '\e900';
 }
+
 .icon-uniE904:before {
     content: '\e904';
 }
+
 .icon-uniE907:before {
     content: '\e907';
 }
+
 .icon-uniE902:before {
     content: '\e902';
 }
-#feature .row a .media-body > h4{
+
+#feature .row a .media-body > h4 {
     font-size: 18px;
-    font-weight:normal;
+    font-weight: normal;
 }
 
-
-
-
+/*立即预约*/
+#bespeak{
+    border-bottom:1px solid #C0C0C0;
+    padding:20px 0;
+}
+/*bootstrap对p标签定义了一个了外距，这里需要清除*/
+#bespeak p{
+    margin:0;
+    font-size: 14px;
+}
+#bespeak p>i{
+    font-size: 20px;
+    position: relative;
+    top:3px;
+    left: -3px;
+}
+.icon-uniE906::before {
+    content: '\e906';
+}
+.icon-unie905::before{
+    content: '\e905';
+}
+#bespeak .pull-left > span {
+    color: #E92322;
+}
+#bespeak .pull-left>a{
+    color: #E92322;
+    border-bottom:1px dashed;
+}
+#bespeak .pull-right>a:hover{
+    color: #E92322;
+}
+/*产品推荐*/
 
 
 
