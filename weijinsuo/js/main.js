@@ -30,4 +30,7 @@ $(function () {
     $(window).on('resize', function () {
         throttle(fitImage, 100);
     }).trigger('resize');
+
+    //对tooltips进行初始化
+    $('[data-toggle="tooltip"]').tooltip();
 });
