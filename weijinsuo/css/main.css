@@ -322,6 +322,7 @@ a:hover {
     height: 150px;
 }
 
+
 /*徽金券细节部分*/
 .panel-ticket > .panel-heading::before,
 .panel-ticket > .panel-heading::after {
@@ -385,6 +386,9 @@ a:hover {
 .panel-ticket > .panel-heading > .tooltips > .badge-two {
     color: #399;
     border-color: #399;
+}
+.panel-ticket .panel-sellout::before{
+    
 }
 
 
