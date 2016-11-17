@@ -29,7 +29,7 @@ body {
     color: #777;
 }
 
-.nav > li > a {
+#header .nav > li > a {
     padding-top: 30px;
     padding-bottom: 30px;
 }
@@ -390,11 +390,56 @@ a:hover {
 .panel-ticket .panel-sellout::before{
     
 }
-
-
-
-
-
+/*全部新闻*/
+#news{
+    padding: 50px 0;
+    border-bottom: 1px solid #C0C0C0;
+}
+#news .news-title>h5{
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    border-bottom: 1px dashed #C0C0C0;
+    padding: 15px 0;
+    margin-right: 10px;
+    position: relative;    
+}
+#news .news-title>h5::after{
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    border:1px solid #C0C0C0;
+    position: absolute;
+    bottom: -5px;
+    right: -10px;
+}
+#news .nav>li i{
+    font-size: 28px;
+    color: #EAEAEA;
+}
+#news .nav>li .icon-news-title1::before{
+    content: "\e90e";    
+}
+#news .nav>li .icon-news-title2::before{
+    content: "\e90f";    
+}
+#news .nav>li .icon-news-title3::before{
+    content: "\e910";    
+}
+#news .nav>li .icon-news-title4::before{
+    content: "\e911";    
+}
+#news .panel{
+    border:0;
+}
+#news .panel-body>ul{
+    list-style:none;
+}
+#news .panel-body > ul>li {
+    line-height: 35px;
+}
 
 
 

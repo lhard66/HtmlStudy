@@ -44,5 +44,10 @@ $(function () {
     if (navWide > $(window).width()) {
         navProduct.css('width', navWide).parent().css('overflow-x','scroll');
     }
-    
+    //导航样式active切换
+    $('#nav_titles>li').on('click', function () {
+        $('#nav_titles').children().removeClass('active');
+        $(this).addClass('active');
+        $('#news_title').text($(this).data('title'));
+    });
 });
