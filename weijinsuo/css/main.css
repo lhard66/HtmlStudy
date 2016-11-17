@@ -10,7 +10,7 @@
 
 /*测试样式*/
 body {
-    height: 9999px;
+    /*height: 9999px;*/
 }
 
 /*Bootstrap扩展*/
@@ -22,6 +22,8 @@ body {
     background-color: #fff;
     border-color: #F5F5F5;
     margin-bottom: 0;
+    top:0;
+    width:100%;
 }
 
 .navbar-gold .navbar-brand {
@@ -415,6 +417,9 @@ a:hover {
     bottom: -5px;
     right: -10px;
 }
+#news .nav>li a{
+    padding:10px 30px;
+}
 #news .nav>li i{
     font-size: 28px;
     color: #EAEAEA;
@@ -439,9 +444,63 @@ a:hover {
 }
 #news .panel-body > ul>li {
     line-height: 35px;
+    overflow: hidden;
+    height: 35px;
 }
-
-
+@media (max-width: 768px) {
+  #news .nav-stacked > li {
+    float: left;
+    margin-right: 20px;
+  }
+}
+/*合作伙伴*/
+.icon-uniE930:before {
+  content: "\e946";
+}
+.icon-uniE92F:before {
+  content: "\e92f";
+}
+.icon-uniE92E:before {
+  content: "\e92e";
+}
+.icon-uniE92A:before {
+  content: "\e92a";
+}
+.icon-uniE929:before {
+  content: "\e929";
+}
+.icon-uniE931:before {
+  content: "\e931";
+}
+.icon-uniE92C:before {
+  content: "\e92c";
+}
+.icon-uniE92B:before {
+  content: "\e92b";
+}
+.icon-uniE92D:before {
+  content: "\e92d";
+}
+#cooperation{
+    padding:30px 0;
+}
+#cooperation ul{
+    list-style:none;
+    display:block;
+    margin:auto;
+    overflow:hidden;
+    width:1400px;
+    padding-left:72px;
+}
+#cooperation li>a{
+    padding:10px 20px;
+    font-size:70px;
+    color:#888;
+}
+#cooperation li{
+    float:left;
+    padding:0 15px;
+}
 
 
 
