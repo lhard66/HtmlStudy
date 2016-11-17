@@ -493,6 +493,7 @@ a:hover {
     padding-left:72px;
 }
 #cooperation li>a{
+    text-decoration:none;
     padding:10px 20px;
     font-size:70px;
     color:#888;
@@ -501,8 +502,9 @@ a:hover {
     float:left;
     padding:0 15px;
 }
-
-
+#cooperation li>a>i:hover{
+    color: #e8380d;
+}
 
 
 
