@@ -42,7 +42,7 @@ $(function () {
     }).parent()
     //如果width与屏幕宽度 $(window).width() 不足时，加上滚动条，否则不加    
     if (navWide > $(window).width()) {
-        navProduct.css('width', navWide).parent().css('overflow-x','scroll');
+        navProduct.css('width', navWide).parent().css('overflow-x', 'scroll');
     }
     //导航样式active切换
     $('#nav_titles>li').on('click', function () {
@@ -50,4 +50,24 @@ $(function () {
         $(this).addClass('active');
         $('#news_title').text($(this).data('title'));
     });
+    //轮播图滑动切换
+    (function () {
+        var startX = 0;
+        var endX = 0;
+        $('#main_banner').on('touchstart', function (e) {
+            startX = e.originalEvent.touches[0].clientX;
+        });
+        $('#main_banner').on('touchmove', function (e) {
+            endX = e.originalEvent.touches[0].clientX;
+        });
+        $('#main_banner').on('touchend', function (e) {
+            console.log(startX + '---' + endX);
+            var distance = Math.abs(startX - endX);
+            var offsetX = 50;
+            if (distance > offsetX) {
+                $(this).carousel(startX > endX ?  'next':'prev');
+            }
+        });
+        
+    }());
 });
