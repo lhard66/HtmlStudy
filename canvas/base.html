@@ -18,8 +18,11 @@
         context.moveTo(100,100);
         context.lineTo(200,100);
         context.lineTo(100,200);
-        context.lineTo(100,100);
-
+        
+        context.closePath();
+        context.strokeStyle='rgba(233,233,233,.8)';
+        context.fillStyle='red';
+        context.fill();
         context.stroke();
     }());
 </script>

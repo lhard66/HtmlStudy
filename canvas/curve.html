@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas width="600" height="600" id="curve"></canvas>
+	<script>
+		(function(){
+			var canvasObj=document.getElementById('curve');			
+			var context=canvasObj.getContext('2d');
+			var canvasWidth=canvasObj.width,canvasHeight=canvasObj.height;
+			var widthStep=10,heightStep=10;			
+			canvasObj.style.border='1px solid #000';
+			context.lineWidth=.5;
+			for (var i = 0; i<canvasWidth/widthStep; i++) {
+				context.moveTo(i*widthStep,0);
+				context.lineTo(i*widthStep,canvasHeight);
+				console.log('aaaa');
+
+				context.moveTo(0,i*heightStep);
+				context.lineTo(canvasWidth,i*heightStep);
+			}
+			
+			context.stroke();
+		}());
+	</script>
+</body>
+</html>
