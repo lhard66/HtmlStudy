@@ -1,39 +1,31 @@
-*,
-::before,
-::after{
-    margin: 0;
-    padding: 0;
-
-    -webkit-tap-highlight-color: transparent;/*Çå³ıµã»÷Ä¬ÈÏµÄ¸ßÁÁĞ§¹û*/
-
-    -webkit-box-sizing: border-box;/*ÒÔÄãµÄborder¿ªÊ¼¼ÆËãÄãµÄ¿í¶È*/
-
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td,nav,section {     
+    margin:0; padding:0; 
+    -webkit-tap-highlight-color: transparent;/*æ¸…é™¤ç‚¹å‡»é»˜è®¤çš„é«˜äº®æ•ˆæœ*/
+    -webkit-box-sizing: border-box;/*ä»¥ä½ çš„borderå¼€å§‹è®¡ç®—ä½ çš„å®½åº¦*/
 }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+ul, ol { list-style:none; }
+a { text-decoration:none; color:#fff;}
+a:hover { text-decoration:none; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+table { border-collapse:collapse; border-spacing:0; }
 
-body{
+body, button, input, select, textarea{
     font-size: 14px;
-    font-family: "Microsoft YaHei",sans-serif;/*µÚ¶ş¸öÊÇÊÖ»úµÄÒ»¸öÄ¬ÈÏµÄ×ÖÌå*/
+    font-family: "Microsoft YaHei",sans-serif;/*ç¬¬äºŒä¸ªæ˜¯æ‰‹æœºçš„ä¸€ä¸ªé»˜è®¤çš„å­—ä½“*/
     color: #000;
-}
-
-a{
-    text-decoration: none;
-    color: #000;
-}
-
-ul{
-    list-style: none;
 }
 
 input,textarea{
     border: none;
     resize: none;
-    outline: none;/*Çå³ıÑ¡ÖĞĞ§¹û*/
-
-    -webkit-appearance: none;/*Çå³ıä¯ÀÀÆ÷Ä¬ÈÏµÄÑùÊ½*/
+    outline: none;/*æ¸…é™¤é€‰ä¸­æ•ˆæœ*/
+    -webkit-appearance: none;/*æ¸…é™¤æµè§ˆå™¨é»˜è®¤çš„æ ·å¼*/
 }
 
-/*Çå³ı¸¡¶¯*/
+/*æ¸…é™¤æµ®åŠ¨*/
 .clearfix::before,
 .clearfix::after{
     content: "";
@@ -43,10 +35,3 @@ input,textarea{
     visibility: hidden;
     clear: both;
 }
-
-[class^="icon_"]{
-    background: url("../images/sprites.png") no-repeat;
-    background-size: 200px 200px;
-}
-
-
