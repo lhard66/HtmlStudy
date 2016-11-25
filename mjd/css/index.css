@@ -139,3 +139,62 @@
 	color: #666;
 	margin-top: 6px;
 }
+/*产品*/
+#product{
+	margin: 0 5px;
+}
+/*秒杀*/
+#seckill>.bar>.sec-kill-left{
+    float:left;
+}
+#seckill>.bar>.sec-kill-left>i{
+	background: url(../images/seckill-icon.png) no-repeat;
+	background-size: 16px 20px;
+	width: 16px;
+	height: 20px;
+	display: block;
+	float: left;
+}
+#seckill>.bar>.sec-kill-left>h4{
+	font-size: 15px;
+	color: #d8505c;
+	font-weight: inherit;
+	float: left;	
+}
+#seckill>.bar .timer{
+	float: left;
+}
+#seckill>.bar .timer>i{
+
+}
+#seckill>.bar>.sec-kill-right{
+    float:right;
+}
+#seckill>.bar>.sec-kill-right>a{
+    line-height:32px;
+    color: black;
+}
+#seckill>.content>ul{
+	padding: 10px 0;
+}
+#seckill>.content>li{
+	width: 33.333%;
+	float: left;
+}
+#seckill>.content li>a{
+	
+}
+#seckill>.content li>a>div{
+
+}
+#seckill>.content li>a>div>img{
+	width: 64%;
+	display: block;
+	margin: 0 auto;
+}
+#seckill>.content li>a>p{
+	color: #d8505c;
+	font-size: 13px;
+	text-align: center;
+	margin-top: 3px;
+}
