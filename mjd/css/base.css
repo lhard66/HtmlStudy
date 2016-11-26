@@ -1,4 +1,4 @@
-body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td,nav,section {     
+body, h1, h2, h3, h4, h5, h6, hr,a, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td,nav,section {     
     margin:0; padding:0; 
     -webkit-tap-highlight-color: transparent;/*清除点击默认的高亮效果*/
     -webkit-box-sizing: border-box;/*以你的border开始计算你的宽度*/

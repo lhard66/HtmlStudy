@@ -5,6 +5,9 @@
     background: url("../images/sprites.png") no-repeat;
     background-size: 200px 200px;
 }
+body{
+    background-color:#f5f5f5;
+}
 .layout{
 	min-width: 300px;
 	max-width: 640px;
@@ -141,9 +144,17 @@
 }
 /*产品*/
 #product{
-	margin: 0 5px;
+	margin: 8px 5px;
+	border-bottom: 1px solid #c0c0c0;
+}
+#product>section{
+    background-color:#fff;
+    margin-bottom: 8px;
 }
 /*秒杀*/
+#seckill>.bar{
+    height:32px;
+}
 #seckill>.bar>.sec-kill-left{
     float:left;
 }
@@ -154,15 +165,19 @@
 	height: 20px;
 	display: block;
 	float: left;
+	margin: 5px 8px 0 8px;
 }
 #seckill>.bar>.sec-kill-left>h4{
 	font-size: 15px;
 	color: #d8505c;
 	font-weight: inherit;
-	float: left;	
+	float: left;
+	margin-top: 5px;
+	margin-right: 5px;
 }
 #seckill>.bar .timer{
 	float: left;
+	margin-top: 5px;
 }
 #seckill>.bar .timer>i{
 
@@ -173,11 +188,13 @@
 #seckill>.bar>.sec-kill-right>a{
     line-height:32px;
     color: black;
+    margin-right: 8px;
 }
+
 #seckill>.content>ul{
 	padding: 10px 0;
 }
-#seckill>.content>li{
+#seckill>.content li{
 	width: 33.333%;
 	float: left;
 }
@@ -185,7 +202,8 @@
 	
 }
 #seckill>.content li>a>div{
-
+    width:100%;
+    margin-bottom: 10px;
 }
 #seckill>.content li>a>div>img{
 	width: 64%;
@@ -196,5 +214,67 @@
 	color: #d8505c;
 	font-size: 13px;
 	text-align: center;
-	margin-top: 3px;
+	margin-top: 5px;
+}
+#seckill>.content li>a>p:nth-child(3){
+	font-size: 12px;
+	text-decoration: line-through;
+	text-align: center;
+	color: #888;
+}
+/*超值购*/
+#product .content{
+
+padding-bottom: 5px;
+}
+#product .bar{
+	height: 32px;
+	border-bottom: 1px solid #e0e0e0;
+	position: relative;	
+}
+#product .bar>h3{
+	font-size: 15px;
+	color: #666;
+	padding-left: 15px;
+	font-weight: inherit;
+	line-height: 32px;
+}
+#product .bar>h3::before{
+	content: "";
+	display: block;
+	width: 3px;
+	height: 12px;
+	background-color: #d8505c;
+	position: absolute;
+	top: 10px;
+	left: 8px;
+}
+#product .content img{
+	width: 100%;
+	display: block;	
+}
+#product .product-float-left{
+	float: left;
+	width: 50%;
+}
+#product .product-float-right{
+	float: right;
+	width: 50%;
+}
+#product .product-border-left{
+	border-left: 1px solid #e0e0e0;
+}
+#product .product-border-right{
+	border-right: 1px solid #e0e0e0;
+}
+#product .product-border-bottom{
+	border-bottom: 1px solid #e0e0e0;
+}
+/*底部*/
+#footer>p{
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	color: #848689;
+	font-size: 12px;
 }
