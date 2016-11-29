@@ -1,0 +1,41 @@
+/*
+* @Author: iceStone
+* @Date:   2015-12-14 16:14:45
+* @Last Modified by:   iceStone
+* @Last Modified time: 2015-12-14 17:05:03
+*/
+body {
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 50px;
+}
+.container {
+  width: 1024px;
+}
+.container > .row {
+  height: 100%;
+}
+.container > .row a {
+  color: #f40;
+}
+.container > .row a:hover {
+  color: #f50;
+}
+.container div {
+  width: 100px;
+}
+.container div .hello {
+  background-color: #00f;
+}
+/*
+* @Author: iceStone
+* @Date:   2015-12-14 17:04:28
+* @Last Modified by:   iceStone
+* @Last Modified time: 2015-12-14 17:11:09
+*/
+.btn {
+  width: 10px;
+  height: 20px;
+  background-color: #1a1a1a;
+  background-color: #e6e6e6;
+}
