@@ -23,18 +23,20 @@ gulp.task('browser-sync', function() {
     });
 });
 
-//压缩js文件
+//合并、压缩js文件
 var uglify=require('gulp-uglify');
+var concat=require('gulp-concat');
 gulp.task('minify-js',function(){
 	gulp.src('./weijinsuo/js/*.js')
-	.pipe(uglify())
-	.pipe(gulp.dest('./weijinsuo/dist/js'));
+	.pipe(concat('all.js'))//合并所有的js文件
+	.pipe(uglify())//压缩js文件
+	.pipe(gulp.dest('./weijinsuo/dist/js'));//输出js文件
 });
 
-//压缩css文件
+//排除、压缩css文件
 var minifyCss=require('gulp-minify-css');
 gulp.task('minify-css',function(){
-	gulp.src('./weijinsuo/css/*.css')
+	gulp.src(['weijinsuo/css/*.css','!weijinsuo/css/_*.css'])
 	.pipe(minifyCss())
 	.pipe(gulp.dest('./weijinsuo/dist/css'));
 });
@@ -49,7 +51,7 @@ gulp.task('minify-html',function(){
 
 //png图片压缩
 
-//less转化
+//less转化、压缩
 var less=require('gulp-less');
 gulp.task('compile-less',function(){
 	gulp.src('./less/main.less')
