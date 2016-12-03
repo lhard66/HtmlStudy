@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>pie</title>
+</head>
+<body>
+	<canvas id='canvas'>
+		not support canvas.
+	</canvas>
+	<script>
+		(function(){
+			var data=[{
+				"value":2,
+				"color":"red",
+				"title":"new"
+			},{
+				"value":1,
+				"color":"blue",
+				"title":"fans"
+			},{
+				"value":4,
+				"color":"green",
+				"title":"old"
+			},{
+				"value":3,
+				"color":"purple",
+				"title":"nb"
+			}];
+
+			var canvasObj=document.getElementById('canvas');
+			canvasObj.width=600;
+			canvasObj.height=600;
+			//canvasObj.style.border='1px solid black';
+
+			var context=canvasObj.getContext('2d');
+
+			
+			context.moveTo(300,400);
+			var degConvert=Math.PI/180;
+			context.arc(300,400,100,0,90*degConvert);
+			context.fillStyle='red';
+			context.fill();
+			
+			//移动至圆心
+			context.moveTo(300,200);
+			var startDeg=0,endDeg=0;
+			for(var i=0;i<4;i++){
+				context.beginPath();
+				context.moveTo(300,200);				
+				endDeg+=(data[i].value/10)*360;
+				console.log(startDeg);
+				console.log(endDeg);
+				context.fillStyle=data[i].color;
+				context.arc(300,200,100,startDeg*degConvert,endDeg*degConvert);				
+				context.fill();
+				context.closePath();
+				startDeg=endDeg;
+				
+				console.log('----------------------');
+			}
+
+		}());
+	</script>
+</body>
+</html>
