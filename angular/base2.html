@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>base2</title>
+</head>
+<body>
+	<div ng-app="myModule" ng-controller="helloController">
+		<input type="button" ng-click="show()">
+	</div>
+	<script src="lib/angular/angular.js"></script>
+	<script>
+		
+			var module=angular.module('myModule',[]);
+			//angular.module('myApp')	若不加[]表示获取一个module对象
+			module.controller('helloController',['$scope','$http',function(a,b){
+				console.log(a);
+				console.log('--------------');
+				console.log(b);
+			}]);
+		
+	</script>
+</body>
+</html>

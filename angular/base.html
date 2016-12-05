@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>base</title>
+</head>
+<body>
+    <h3>使用NG实现双边数据绑定:</h3>	
+	<div ng-app ng-init="user.name='hello world!'">
+		<input type="text" ng-model="user.name" value="123" />
+	
+		<span>{{user.name}}</span>
+	</div>
+	<script src="lib/angular/angular.js"></script>
+</body>
+</html>
