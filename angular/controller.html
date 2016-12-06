@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userapp">
+<head>
+	<meta charset="UTF-8">
+	<title>controller</title>
+</head>
+<body>
+	<div ng-controller="userController">
+		<p>用户：<input type="text" ng-model='name'></p>
+		<p>年龄：<input type="text" ng-model='age'></p>
+		<p><input type="button" ng-click="showInfo()" value="show"></p>
+	</div>
+	<script src="lib/angular/angular.js"></script>
+	<script>
+		(function(){
+			//定义scope的user对象的方法
+			// $scope.user={
+			// 	name:'',
+			// 	age:''
+			// }
+			var usermodule=angular.module('userapp',[]);
+			usermodule.controller('userController',['$scope',function($scope){
+				$scope.showInfo=function(){
+					console.log($scope.name+'---'+$scope.age);				
+				}				
+			}]);
+		}());
+	</script>
+</body>
+</html>
