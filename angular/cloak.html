@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>加载时即隐藏表达式</title>
+	<style>
+		/*此处使用属性选择器，加载时即隐藏表达式*/
+		body[ng-cloak]{
+			display: none;
+		}
+	</style>
+</head>
+<!-- 在body内添加ng-cloak属性，添加ng-cloak，是在angular加载完毕时才会隐藏原始表达式，故加载时还会看到原始表达式 -->
+<body ng-app ng-cloak>
+	{{ true ? 'true':'false' }}
+	<script src="lib/angular/angular.js"></script>
+</body>
+</html>
