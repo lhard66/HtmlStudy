@@ -13,15 +13,15 @@
 	<script src="lib/angular/angular.js"></script>
 	<script>
 		(function(){
-			//定义scope的user对象的方法
-			// $scope.user={
-			// 	name:'',
-			// 	age:''
-			// }
 			var usermodule=angular.module('userapp',[]);
 			usermodule.controller('userController',['$scope',function($scope){
 				$scope.showInfo=function(){
-					console.log($scope.name+'---'+$scope.age);				
+					console.log($scope.name+'---'+$scope.age);	
+					//定义scope的user对象的方法
+					// $scope.user={
+					// name:'123',
+					// age:'456'
+					// }			
 				}				
 			}]);
 		}());
