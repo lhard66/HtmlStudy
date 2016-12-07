@@ -8,21 +8,37 @@
 	<div ng-controller="userController">
 		<p>用户：<input type="text" ng-model='name'></p>
 		<p>年龄：<input type="text" ng-model='age'></p>
-		<p><input type="button" ng-click="showInfo()" value="show"></p>
+		<p><input type="button" ng-click="showInfo()" value="show"><span>{{msg}}</span></p>
 	</div>
 	<script src="lib/angular/angular.js"></script>
 	<script>
 		(function(){
 			var usermodule=angular.module('userapp',[]);
 			usermodule.controller('userController',['$scope',function($scope){
-				$scope.showInfo=function(){
+				//1.控制器内的方法
+				$scope.showInfo=function(){					
 					console.log($scope.name+'---'+$scope.age);	
 					//定义scope的user对象的方法
 					// $scope.user={
 					// name:'123',
 					// age:'456'
 					// }			
-				}				
+				}
+				//2.控制器内的监视方法
+				//监视用户名，若小于3个字母，则提示。
+				//$scope.msg='用户名大于3个字符';
+				$scope.$watch('name',function(nowdata,olddata){
+					console.log('aaaa');
+					if(nowdata){
+						if(nowdata.length<3){
+							$scope.msg='用户名大于3个字符';
+						}else{
+							$scope.msg='';
+						}
+					}else{
+						$scope.msg='用户名为空';
+					}
+				});				
 			}]);
 		}());
 	</script>
