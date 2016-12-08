@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="utf-8">
+	<title>模块化编程思想，多模块，多控制器</title>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="App1Controller">
+		<input type="button" value="modualOne" ng-click="doSomething1()">
+		<input type="button" value="modualTwo" ng-click="doSomething2()">		
+	</div>
+	<hr/>
+	<div ng-controller="App2Controller">
+		<input type="button" value="modualThree" ng-click="doSomething3()">
+		<input type="button" value="modualFour" ng-click="doSomething4()">		
+	</div>
+	<script src="lib/angular/angular.js"></script>
+	<script>
+		(function(){
+			//模块一
+			var myApp1=angular.module('myApp1',[]);
+			myApp1.controller('App1Controller',['$scope',function($scope){
+				$scope.doSomething1=function(){
+					console.log('my app 1,doSomething 1');
+				}
+				$scope.doSomething2=function(){
+					console.log('my app 1,doSomething 2');
+				}
+			}]);
+
+			//模块二：
+			var myApp2=angular.module('myApp2',[]);
+			myApp2.controller('App2Controller', ['$scope', function($scope){
+				$scope.doSomething3=function(){
+					console.log('my app 2,doSomething 3');
+				}
+				$scope.doSomething4=function(){
+					console.log('my app 2,doSomething 4');
+				}
+			}]);
+
+			angular.module('myApp',['myApp1','myApp2']);
+			
+			
+		}());
+	</script>
+</body>
+</html>
