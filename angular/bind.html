@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="utf-8">
+	<title>ng-bing和ng-bind-html</title>
+</head>
+<body>
+	<div ng-app="myapp" ng-init="name='jim'" ng-controller="bindController">
+		<p><b>name:</b><input type="text" name="name" ng-model="name"></p>
+		<p><b>name:</b><span ng-bind="name"></span></p>
+	</div>
+	<script src="lib/angular/angular.js"></script>
+	<script>
+		(function(){
+			//以下代码，并没有起作用。只是练习时写的。
+			var module=angular.module('myapp',[]);
+			module.controller('bindController', ['$scope', function($scope){
+				$scope.name='lucy';
+			}]);
+			
+		}());
+	</script>
+</body>
+</html>
