@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="utf-8">
+	<title>模块化编程思想,一个模块，定义多个控制器</title>
+</head>
+<body ng-app="mymodule">
+	<div ng-controller="app1controller">
+		<input type="button" value="app1" ng-click="doSomething1()">
+	</div>
+	<div ng-controller="app2controller">
+		<input type="button" value="app2" ng-click="doSomething2()">
+	</div>
+
+	<script src="lib/angular/angular.js"></script>
+	<script>
+		(function(){
+			var module=angular.module('mymodule', []);
+			module.controller('app1controller', ['$scope', function($scope){
+				$scope.doSomething1=function(){
+					console.log('dosomething for app1 controller');
+				}
+			}]);
+
+			module.controller('app2controller', ['$scope', function($scope){
+				$scope.doSomething2=function(){
+					console.log('dosomething for app2 controller');
+				}
+			}]);
+		}());		
+	</script>
+</body>
+</html>
