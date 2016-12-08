@@ -7,13 +7,19 @@
 		body[ng-cloak]{
 			display: none;
 		}
+		ul{
+			list-style: none;
+			
+		}
 	</style>
 </head>
 <body>
 	<div ng-app="myapp">
 		<ul ng-controller="repeatController">
 			<li ng-repeat="item in data" id="{{item.id}}">
+				<p>{{$first?'开始：':''}}</p>
 				<span>name:{{item.name}},age:{{item.age}},sex:{{item.sex}}</span>
+				<p>{{$last?'结束！':''}}</p>
 			</li>
 		</ul>
 	</div>
