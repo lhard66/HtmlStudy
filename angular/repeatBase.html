@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="utf-8">
+	<title>repeat基础用法</title>
+	<style>
+		body[ng-cloak]{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div ng-app="myapp">
+		<ul ng-controller="repeatController">
+			<li ng-repeat="item in data" id="{{item.id}}">
+				<span>name:{{item.name}},age:{{item.age}},sex:{{item.sex}}</span>
+			</li>
+		</ul>
+	</div>
+	<script src="lib/angular/angular.js"></script>
+	<script>
+		(function(){
+			var module=angular.module('myapp',[]);
+			module.controller('repeatController', ['$scope', function($scope){
+				$scope.data=[
+					{'id':1,'name':'jim','age':18,'sex':'F'},
+					{'id':2,'name':'lucy','age':23,'sex':'M'},
+					{'id':3,'name':'hard','age':88,'sex':'F'}
+				];
+
+
+				//$scope.data=[];
+				//$scope.data=[];
+				//$scope.data[0]={'id':1,'name':'jim','age':18,'sex':'F'};
+				//$scope.name={age:18,sex,'F'};
+				 // $scope.arr= {		            
+		   //          name: '赵小黑的小',
+		   //          age: 20
+		   //      };
+			}]);
+			
+		}());
+	</script>
+</body>
+</html>
