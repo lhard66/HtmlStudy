@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="utf-8">
+	<title>ng-class的基本用法，隔行换色基本用法</title>
+	<script src="lib/angular/angular.js"></script>	
+	<style>
+		.red{
+			color: red;
+		}
+		.green{
+			color: green;
+		}
+	</style>
+</head>
+<body>
+	<div ng-app="appModule">
+		<ul ng-controller="appController">
+			<li ng-repeat="item in data" ng-class="{red:$even,green:$odd}">
+				{{item.name}}---{{item.age}}
+			</li>
+		</ul>
+	</div>
+	<script>
+		(function(){
+			var appModule=angular.module('appModule',[]);
+			appModule.controller('appController', ['$scope', function($scope){
+				$scope.data=[
+					{'name':'jim','age':18},
+					{'name':'lucy','age':22},
+					{'name':'tom','age':38}
+				];
+			}])	
+			
+		}());
+	</script>
+</body>
+</html>
