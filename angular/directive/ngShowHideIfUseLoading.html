@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="utf-8">
+	<title>ng-show、ng-hide和ng-if的用法</title>
+	<script src="../lib/angular/angular.js"></script>
+	<style>
+		.loading{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(100,100,100,.5);
+			font-size: 40px;
+			line-height: 100vh;
+			text-align: center;			
+		}
+	</style>
+</head>
+<body ng-app="appModule" ng-controller="appController">
+	<div>
+		content
+	</div>
+	<div class="loading" ng-if="loaded">
+		loading
+	</div>
+	<script>
+		(function(){
+			var app=angular.module('appModule',[]);
+			app.controller('appController', ['$scope','$timeout', function($scope,$timeout){
+				$scope.loaded=true;
+
+				$timeout(function(){
+					$scope.loaded=false;
+				},3000);
+
+
+			}]);
+			
+		}());
+	</script>
+</body>
+</html>
