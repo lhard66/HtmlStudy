@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="utf-8">
+	<title>ng-checked与ng-model的区别和用法</title>
+	<script src="../lib/angular/angular.js"></script>
+</head>
+<body>
+	<div ng-app>
+		<input type="checkbox" ng-model='flag'>全选
+		<hr/>
+		<input type="checkbox" ng-checked="flag">111
+		<input type="checkbox" ng-checked="flag">222
+		<input type="checkbox" ng-checked="flag">333
+		<input type="checkbox" ng-checked="flag">444
+	</div>
+</body>
+</html>
