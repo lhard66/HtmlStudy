@@ -35,5 +35,49 @@
 				}
 			}
 		}
+		//清除完成的项目
+		$scope.clearCompleted=function () {
+			var notCompleted=[];
+			$scope.todos.forEach(function (item) {
+				if(!item.completed){
+					notCompleted.push(item);
+				}
+			});
+			$scope.todos=notCompleted;
+		}
+		//是否显示clear completed按钮
+		$scope.existCompleted=function () {
+
+			for(var k in $scope.todos){
+				if($scope.todos[k].completed){
+					return true;
+				}
+			}
+			return false;
+		}
+		//当前正在编辑的文本框ID
+		$scope.currentEditId=-1;
+		$scope.editing=function (id) {
+			$scope.currentEditId=id;
+		}
+		$scope.save=function () {
+			$scope.currentEditId=-1;
+
+		}
 	}])
 })(angular);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
