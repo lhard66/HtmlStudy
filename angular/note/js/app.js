@@ -62,7 +62,14 @@
 		}
 		$scope.save=function () {
 			$scope.currentEditId=-1;
-
+		}
+		//全选
+		var selStatus=true;
+		$scope.selectAll=function () {
+			$scope.todos.forEach(function (item) {
+				item.completed=selStatus;
+			});
+			selStatus=!selStatus;
 		}
 	}])
 })(angular);
