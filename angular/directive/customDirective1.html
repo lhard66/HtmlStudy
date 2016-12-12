@@ -15,7 +15,8 @@
 			var app=angular.module('customDirective',[]);
 			app.directive('btnPrimary', [function(){
 				
-				return {					
+				return {		
+					replace: true, // 替换指令在HTML中绑定的元素			
 					template: '<input type="button" value="custome directive" data-class="btn btn-lg btn-primary" />'					
 				};
 			}]);
