@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="utf-8">
+	<title>location的使用</title>
+</head>
+<body>
+	<div ng-app="locationModule" ng-controller="locationController">
+		<a href="#a/b/c" >change location</a>
+		<br/>
+		<span>{{locationPath}}</span>
+		<br>
+		<span>{{locationPath}}</span>
+	</div>
+	<script src="../lib/angular/angular.js"></script>
+	<script>
+		(function(){
+			var locationModule=angular.module('locationModule',[]);
+			locationModule.controller('locationController', ['$scope','$location', function($scope,$location){
+				$scope.locationPath=$location.path();
+
+				$scope.showLocation=function(){
+					console.log($scope.locationPath);
+				}
+			}])
+			
+		})(angular);
+	</script>
+</body>
+</html>
