@@ -11,17 +11,26 @@
 		<span>{{locationPath}}</span>
 		<br>
 		<span>{{locationPath}}</span>
+		<hr>
+		<span>{{test}}</span>
 	</div>
 	<script src="../lib/angular/angular.js"></script>
 	<script>
 		(function(){
 			var locationModule=angular.module('locationModule',[]);
 			locationModule.controller('locationController', ['$scope','$location', function($scope,$location){
-				$scope.locationPath=$location.path();
 
-				$scope.showLocation=function(){
-					console.log($scope.locationPath);
-				}
+				//此处的$scope.$location是一个系统的$location对象，而非开发者自定义的变量。
+				$scope.$location=$location;
+
+				// $scope.showLocation=function(){
+				// 	console.log($scope.locationPath);
+				// }
+				$scope.test='123';
+				$scope.$watch('$location.path()',function(now,old){
+					console.log('watch:'+now);
+					$scope.test=now;
+				});
 			}])
 			
 		})(angular);
