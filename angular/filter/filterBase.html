@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="utf-8">
+    <title>filter过滤器的基本使用</title>
+    <script src="../lib/angular/angular.js"></script>
+</head>
+
+<body>
+    <div ng-app="filterModule" ng-controller="filterController">
+        <input type="search" ng-model='search'>
+        <ul>
+            <li ng-repeat="item in data | filter:{text: search}">
+            	{{item.text}}
+            </li>
+        </ul>
+    </div>
+    <script>
+    (function() {
+        var filterModule = angular.module('filterModule', []);
+        filterModule.controller('filterController', ['$scope', function($scope) {
+        	$scope.search='';
+
+            $scope.data = [{
+                id: 0.123,
+                text: '学习',
+                completed: true
+            }, {
+                id: 0.22,
+                text: '睡觉',
+                completed: false
+            }, {
+                id: 0.232,
+                text: '打豆豆',
+                completed: true
+            }, {
+                id: 0.2321,
+                text: '打豆豆1',
+                completed: true
+            }, {
+                id: 0.2322,
+                text: '打豆豆2',
+                completed: false
+            }, {
+                id: 0.2323,
+                text: '打豆豆3',
+                completed: true
+            }, {
+                id: 0.2323,
+                text: '回答一下到底是true/false',
+                completed: false
+            }];
+        }]);
+
+    })(angular);
+    </script>
+</body>
+
+</html>
