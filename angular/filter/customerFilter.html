@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="utf-8">
+    <title>自定义过滤器</title>
+</head>
+
+<body ng-app="app">
+    <h1>{{ture|checkmark}}</h1>
+    <h1>{{ture|checkmark:2}}</h1>
+    <input type="text" name="" id="" ng-model="weight">
+    <p>你{{weight|weightFilter}}</p>
+
+    <script src="../lib/angular/angular.js"></script>
+    <script>
+    (function() {
+        var appModule = angular.module('app', []);
+        appModule.filter('checkmark', function() {
+            return function(input, style) {
+                //短路运算符
+                style = style || 1;
+                switch (style) {
+                    case 1:
+                        return input ? '\u2713' : 'u2718';
+                    case 2:                    	
+                        return input ? '\u2714' : '\u2719';
+
+                }
+            }
+        });
+        appModule.filter('weightFilter',function(){
+        	return function(input){
+        		if(input>100){
+        			return '太胖了';
+        		}else{
+        			return '太瘦了';
+        		}
+        	}
+        });
+
+    })(angular);
+    </script>
+</body>
+
+</html>
