@@ -7,7 +7,7 @@
    * 应用程序的主要的模块
    */
   	var noteModule=angular.module('note',[]);
-	noteModule.controller('MainController',['$scope',function ($scope) {
+	noteModule.controller('MainController',['$scope','$location',function ($scope,$location) {
 		//初始化数据,数组对象
 		$scope.todos=[
 			{id:1,text:'学习',completed:true},
@@ -70,6 +70,29 @@
 				item.completed=selStatus;
 			});
 			selStatus=!selStatus;
+		}
+		//筛选：完成、未完成、全部
+		$scope.selector={};
+		//因为watch只能监控$scope对象，故将$location.path()赋值给$scope
+		$scope.$location=$location;
+		//此处watch的形参now不能写成new,因为new是关键字
+		//使用watch监控的原因：因为URL的改变，浏览器是不是自动刷新的，需要使用watch监控URL地址的改变，若改变后做一些处理。
+		$scope.$watch('$location.path()',function(now,old){
+			switch(now){
+				case '/active':
+					$scope.selector={completed:false};//这里赋的值是一个对象，不要用单引号
+					break;
+				case '/completed':
+					$scope.selector={completed:true};
+					break;
+				default:
+					$scope.selector={};
+			}
+		});
+
+		//自定义比较函数，默认filter过滤器使用的是模糊匹配
+		$scope.equalCompare=function(source,target){
+			return source===target;
 		}
 	}])
 })(angular);
