@@ -5,7 +5,35 @@
 	<title>自定义指令高级</title>
 	<script src="../lib/angular/angular.js"></script>
 </head>
-<body>
-	
+<body ng-app="app">
+	<div ng-controller="appController">
+		<breadcrumb data="{{pathData}}"></breadcrumb>
+	</div>
+	<script>
+		(function(angular){
+			var appModule=angular.module('app',[]);
+			appModule.controller('appController', ['$scope', function($scope){
+				$scope.pathData={
+					home:'baidu.com',
+					news:'taobao.com',
+					article:'smartliu.com'
+				};
+			}]);
+
+			appModule.directive('breadcrumb', [function(){
+				// Runs during compile
+				return {
+					restrict: 'EA', // E = Element, A = Attribute, C = Class, M = Comment
+					templateUrl: 'template/breadcrumb.html',
+					replace: true,
+					transclude: true,
+					link:function(scope,element,attributes){
+						scope.data=JSON.parse(attributes.data);
+					}
+				};
+			}]);
+			
+		})(angular);
+	</script>
 </body>
 </html>
