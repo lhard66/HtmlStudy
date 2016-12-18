@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="utf-8">
+	<title>路由基础使用方式</title>
+	<script src="../lib/angular/angular.js"></script>
+	<script src="../lib/angular-route/angular-route.js"></script>	
+</head>
+<body ng-app="app">
+	<!-- 注意：内嵌式模板必须要放在ng-app标签内，否则会报错，内容是找不到此地址 -->
+	<script id="inside_tmpl" type="text/ng-template">
+		<!-- 只有type="text/javascript"的script节点才会被当做JS执行 -->
+		<!-- script中的内容就算不能执行，也不可以显示在界面上 -->
+		<b>{{title}}</b>
+	</script>
+	<div>
+		<ul>
+			<li><a href="#/a">A</a></li>
+			<li><a href="#/b">B</a></li>
+			<li><a href="#/inside">C</a></li>
+		</ul>
+		<h3>路由地址是：</h3>
+		<p ng-view></p>
+	</div>
+	
+	<script>
+		(function(angular){
+			var appModule=angular.module('app',['ngRoute']);//此处要注册ngRoute模块，注意！！！
+			
+			appModule.config(['$routeProvider',function($routeProvider) {
+				$routeProvider
+					.when('/students/:name?',{
+						controller:'StudentsController',//每个控制器要对应一个视图，下面一行是视图地址
+						templateUrl:'./views/a.html'//此为路由的外链式使用方式
+					})
+					.when('/a',{
+						controller:'AController',
+						templateUrl:'./views/a.html'
+					})
+					.when('/b',{
+						controller:'BController',
+						templateUrl:'./views/a.html'
+					})
+					.when('/inside',{
+						controller:'InsideController',
+						templateUrl:'inside_tmpl'
+					})
+					.otherwise({
+						redirectTo:'/a'
+					});					
+			}]);
+			appModule.controller('StudentsController', ['$scope','$routeParams', function($scope,$routeParams){
+				$scope.title='hello'+$routeParams['name']+'_this is student controller';
+			}]);
+			appModule.controller('AController', ['$scope', function($scope){
+				$scope.title='this is A Controlller';
+			}]);
+			appModule.controller('BController', ['$scope', function($scope){
+				$scope.title='this is B controller';
+			}]);
+			appModule.controller('InsideController', ['$scope', function($scope){
+				$scope.title='this is inside controller';
+			}]);
+		})(angular);
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
