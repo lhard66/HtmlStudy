@@ -9,51 +9,58 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 
-<body ng-app="note">
-    <section class="todoapp" ng-controller="MainController">
-        <header class="header">
-            <h1>Note</h1>
-            <form ng-submit="add()">
-                <input class="new-todo" placeholder="What needs to be done?" ng-model="text" autofocus>
-            </form>
-        </header>
-        <section class="main">
-            <input class="toggle-all" type="checkbox" ng-click="selectAll()">
-            <label for="toggle-all">Mark all as complete</label>
-            <ul class="todo-list">
-                <li ng-repeat="item in todos | filter: selector:equalCompare" ng-class="{completed:item.completed,editing:item.id==currentEditId}" id="{item.id}">
-                    <div class="view">
-                        <input class="toggle" type="checkbox" ng-model="item.completed">
-                        <label ng-dblclick="editing(item.id)">{{item.text}}</label>
-                        <button class="destroy" ng-click="delete(item.id)"></button>
-                    </div>
-                    <form ng-submit="save()">
-                        <input class="edit" ng-model="item.text">
-                    </form>
-                </li>
-            </ul>
+<body ng-app="app">
+<!-- 注意：此处如果不加ng-view，则script type=text/ng-template内的内容是不会显示的 -->
+    <ng-view></ng-view>
+    <script id="main_tmpl" type="text/ng-template">
+        <section class="todoapp" ng-controller="MainController">
+            <header class="header">
+                <h1>Note</h1>
+                <form ng-submit="add()">
+                    <input class="new-todo" placeholder="What needs to be done?" ng-model="text" autofocus>
+                </form>
+            </header>
+            <section class="main">
+                <input class="toggle-all" type="checkbox" ng-click="toggleAll()">
+                <label for="toggle-all">Mark all as complete</label>
+                <ul class="todo-list">
+                    <li ng-repeat="item in todos | filter: selector : equalCompare" ng-class="{completed:item.completed,editing:item.id==currentEditId}" id="{item.id}">
+                        <div class="view">
+                            <input class="toggle" type="checkbox" ng-model="item.completed" ng-change="toggle()">
+                            <label ng-dblclick="editing(item.id)">{{item.text}}</label>
+                            <button class="destroy" ng-click="delete(item.id)"></button>
+                        </div>
+                        <form ng-submit="save()">
+                            <input class="edit" ng-model="item.text">
+                        </form>
+                    </li>
+                </ul>
+            </section>
+            <footer class="footer">
+                <span class="todo-count"><strong>{{todos.length}}</strong> item left</span>
+                <ul class="filters">
+                    <li>
+                        <a ng-class="{selected:selector.completed==undefine}" href="#/">All</a>
+                    </li>
+                    <li>
+                        <a ng-class="{selected:selector.completed==false}" href="#/active">Active</a>
+                    </li>
+                    <li>
+                        <a ng-class="{selected:selector.completed==true}" href="#/completed">Completed</a>
+                    </li>
+                </ul>
+                <button class="clear-completed" ng-click="clearCompleted()" ng-show="existCompleted()">Clear completed</button>
+            </footer>
         </section>
-        <footer class="footer">
-            <span class="todo-count"><strong>{{todos.length}}</strong> item left</span>
-            <ul class="filters">
-                <li>
-                    <a ng-class="{selected:selector.completed==undefine}" href="#/">All</a>
-                </li>
-                <li>
-                    <a ng-class="{selected:selector.completed==false}" href="#/active">Active</a>
-                </li>
-                <li>
-                    <a ng-class="{selected:selector.completed==true}" href="#/completed">Completed</a>
-                </li>
-            </ul>
-            <button class="clear-completed" ng-click="clearCompleted()" ng-show="existCompleted()">Clear completed</button>
-        </footer>
-    </section>
+    </script>
     <footer class="info">
         <p>Double-click to edit a todo</p>
         <p>Created by <a href="http://smartliu.com">Hero Liu</a></p>
     </footer>
     <script src="../lib/angular/angular.js"></script>
+    <script src="../lib/angular-route/angular-route.js"></script>
+    <script src="js/controllers/main.js"></script>
+    <script src="js/services/main.js"></script>
     <script src="js/app.js"></script>
 </body>
 
