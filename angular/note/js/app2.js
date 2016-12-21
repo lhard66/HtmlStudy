@@ -55,22 +55,7 @@
 			}
 			return false;
 		}
-		//当前正在编辑的文本框ID
-		$scope.currentEditId=-1;
-		$scope.editing=function (id) {
-			$scope.currentEditId=id;
-		}
-		$scope.save=function () {
-			$scope.currentEditId=-1;
-		}
-		//全选
-		var selStatus=true;
-		$scope.selectAll=function () {
-			$scope.todos.forEach(function (item) {
-				item.completed=selStatus;
-			});
-			selStatus=!selStatus;
-		}
+		
 		//筛选：完成、未完成、全部
 		$scope.selector={};
 		//因为watch只能监控$scope对象，故将$location.path()赋值给$scope
