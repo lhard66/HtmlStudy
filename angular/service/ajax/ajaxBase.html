@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="utf-8">
+	<title>angular中ajax基本使用方式</title>
+	<script src="../../lib/angular/angular.js"></script>
+</head>
+<body>
+	<div ng-app="app" ng-controller="ajaxController">
+		<p ng-repeat="(key, value) in data">
+			{{key}}--->{{value}}
+		</p>
+	</div>	
+
+	<script>
+		angular.module('app',[])
+			.controller('ajaxController', ['$scope','$http', function($scope,$http){
+				$scope.data=[];
+				$http.get('dataForAjax.json').then(function(response){
+					//成功时执行的函数
+					console.log(response.data);
+					$scope.data=response.data;
+				},function(err){
+					//失败时执行的函数
+					console.log(err);
+				});
+			}])
+		
+	</script>
+</body>
+</html>
