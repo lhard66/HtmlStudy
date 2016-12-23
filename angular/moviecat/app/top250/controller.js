@@ -14,7 +14,6 @@
     }]);
 
     moduleRank.controller('Top250Controller', ['$scope', function($scope) {
-        console.log('aaaa');
         $scope.title = 'top250';
     }]);
 

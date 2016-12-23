@@ -13,9 +13,16 @@
         });
     }]);
 
-    moduleHot.controller('InTheatersController', ['$scope', function($scope) {
-    	console.log(1111);
+    moduleHot.controller('InTheatersController', ['$scope','$http', function($scope,$http) {    	
         $scope.title = '正在热映';
+        $scope.data=[];
+        $scope.msg='';
+        // 1.使用不跨域的方便请求数据
+        $http.get('data.json').then(function(response){
+            $scope.data=response.data;
+        },function(err){
+            $scope.msg='请求异常，请稍候再试。';            
+        });
     }])
 
 
