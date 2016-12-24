@@ -43,7 +43,6 @@
                     $scope.data = data;
                     $scope.title = data.title;
                     $scope.totalPages = Math.ceil(data.total / $scope.pageCount);//共多少页
-                    console.log($scope.totalPages);
                     $scope.loading = false;
                     $scope.$apply();
                 });
