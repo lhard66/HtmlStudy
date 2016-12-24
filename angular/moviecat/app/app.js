@@ -5,8 +5,7 @@
 // 若由载入其直接子模块，则不会报错，但路由导入会失败，没有反应。
 angular.module('moviecat', [
   'ngRoute',
-  'moviecat.in_theaters',
-  'moviecat.top250'
+  'moviecat.movie_list'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/in_theaters/1'});
