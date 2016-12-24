@@ -51,6 +51,7 @@
 					});					
 			}]);
 			appModule.controller('StudentsController', ['$scope','$routeParams', function($scope,$routeParams){
+				console.log($routeParams.name);
 				$scope.title='hello '+$routeParams['name']+',this is student controller';
 			}]);
 			appModule.controller('AController', ['$scope', function($scope){
