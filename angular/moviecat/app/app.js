@@ -10,4 +10,15 @@ angular.module('moviecat', [
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/in_theaters/1'});
+}])
+.controller('SearchController', ['$scope','$route', function($scope,$route){
+	//取出文本中输入的值
+	$scope.input='';
+	console.log($scope.input);
+	//定义敲击键盘事件
+	$scope.Search=function(){
+		console.log($scope.input);
+		//更新路由地址，执行对应的函数
+		$route.updateParams({category:'search',q:$scope.input});
+	}
 }]);

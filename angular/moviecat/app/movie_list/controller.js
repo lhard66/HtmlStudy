@@ -22,7 +22,7 @@
         'HttpService',
         function($scope, $route, $routeParams, HttpService) { //这里删除了$http形参
             $scope.loading = true;
-            $scope.title = ''; //标题
+            $scope.title = 'Loading...'; //标题
             $scope.data = []; //拿到的豆瓣数据
             $scope.msg = ''; //错误信息
             $scope.pageCount = 3; //一页显示多少条
@@ -38,7 +38,7 @@
 
             //2.使用自定义的跨域请求
             HttpService.jsonp(
-                'http://api.douban.com/v2/movie/'+$routeParams.category, { start: $scope.start, count: $scope.pageCount },
+                'http://api.douban.com/v2/movie/'+$routeParams.category, { start: $scope.start, count: $scope.pageCount,q:$routeParams.q },
                 function(data) {
                     $scope.data = data;
                     $scope.title = data.title;

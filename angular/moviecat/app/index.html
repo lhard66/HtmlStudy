@@ -23,8 +23,8 @@
                 <a class="navbar-brand" href="#">Douban movie</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">                
-                <form class="navbar-form navbar-right">
-                    <input type="text" class="form-control" placeholder="Search...">                    
+                <form class="navbar-form navbar-right" ng-controller="SearchController" ng-submit="Search()">
+                    <input type="text" class="form-control" placeholder="回车搜索" ng-model="input">  
                 </form>
             </div>
         </div>
