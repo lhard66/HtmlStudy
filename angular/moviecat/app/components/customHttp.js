@@ -19,7 +19,13 @@
             //;my_json_callback09978802098529842({jsonobj});
             //其中jsonobj即是豆瓣回复的数据。函数最前面的;号是为了防止前面有其它js代码与其混在一起，例如：
             //alert(123);my_json_callback
-            $window[cbFuncName] = callback;
+            //$window[cbFuncName] = callback;
+            $window[cbFuncName]=function(data){
+                callback(data);
+                //移除第4步创建的标签
+                $document[0].body.removeChild(scriptElement);//此处只是定义函数，函数内处理移除操作。
+                //但此函数还未执行，到第四步时执行。
+            }
             //3.添加网址后的参数，如：?callback=fnName&name=jim
             var querystring = url.indexOf('?') == -1 ? '?' : '&';
             for (var key in data) {
