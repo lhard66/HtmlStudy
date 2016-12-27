@@ -20,15 +20,16 @@
         '$routeParams',
         // '$http',
         'HttpService',
-        function($scope, $route, $routeParams, HttpService) { //这里删除了$http形参
+        'AppConfig',
+        function($scope, $route, $routeParams, HttpService, AppConfig) { //这里删除了$http形参
             $scope.loading = true;
             $scope.title = 'Loading...'; //标题
             $scope.data = []; //拿到的豆瓣数据
             $scope.msg = ''; //错误信息
-            $scope.pageCount = 3; //一页显示多少条
+            $scope.pageCount = AppConfig.pageSize; //一页显示多少条
             $scope.currentPage = parseInt($routeParams.page); //
             $scope.start = ($scope.currentPage - 1) * $scope.pageCount; //从那里开始读取数据
-            $scope.totalPages = 0;            
+            $scope.totalPages = 0;
             // 1.使用不跨域的方便请求数据
             // $http.get('data.json').then(function(response){
             //     $scope.data=response.data;
@@ -37,21 +38,18 @@
             // });
 
             //2.使用自定义的跨域请求
-            HttpService.jsonp(
-                'http://api.douban.com/v2/movie/'+$routeParams.category, { start: $scope.start, count: $scope.pageCount,q:$routeParams.q },
+            console.log(AppConfig.listApiAddress);
+            HttpService.jsonp(                
+                AppConfig.listApiAddress + $routeParams.category, { start: $scope.start, count: $scope.pageCount, q: $routeParams.q },
                 function(data) {
                     $scope.data = data;
                     $scope.title = data.title;
-                    $scope.totalPages = Math.ceil(data.total / $scope.pageCount);//共多少页
+                    $scope.totalPages = Math.ceil(data.total / $scope.pageCount); //共多少页
                     $scope.loading = false;
                     $scope.$apply();
                 });
             $scope.goPage = function(page) {
-                console.log(page);
-
                 if (page > 0 && page <= $scope.totalPages) {
-                    console.log(666);
-
                     $route.updateParams({ page: page });
                 }
             }

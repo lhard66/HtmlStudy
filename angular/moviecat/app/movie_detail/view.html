@@ -1,0 +1,15 @@
+<!-- <div class="jumbotron">
+  <h1>{{movie.title}}</h1>
+  <img ng-src="{{movie.images.large}}" alt="{{movie.title}}">
+  <p>{{movie.summary}}</p>
+</div>
+ -->
+<div class="media">
+  <a class="media-left" href="#">
+    <img src="{{movie.images.medium}}" alt="{{movie.title}}">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">{{movie.title}}</h4>
+    {{movie.summary}}
+  </div>
+</div>

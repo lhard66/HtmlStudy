@@ -5,16 +5,21 @@
 // 若由载入其直接子模块，则不会报错，但路由导入会失败，没有反应。
 angular.module('moviecat', [
   'ngRoute',
+  'moviecat.movie_detail',
   'moviecat.movie_list',
   'moviecat.directives.auto_focus'
-]).
-config(['$routeProvider', function($routeProvider) {
+])
+.constant('AppConfig',{
+	pageSize:3,
+	listApiAddress:'http://api.douban.com/v2/movie/',
+	detailApiAddress:'http://api.douban.com/v2/movie/subject/'
+})
+.config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/in_theaters/1'});
 }])
 .controller('SearchController', ['$scope','$route', function($scope,$route){
 	//取出文本中输入的值
 	$scope.input='';
-	console.log($scope.input);
 	//定义敲击键盘事件
 	$scope.Search=function(){
 		console.log($scope.input);
