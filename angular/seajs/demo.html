@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="utf-8">
+  <title>seajs简单示例</title>
+  <script src="node_modules/seajs/dist/sea.js"></script>
+  <script>
+  seajs.use('./calculator.js', function(calculator) {
+    console.log(calculator.add(1, 2, 3, 4, 5, 6, 7, 8, 9));
+  });
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>
