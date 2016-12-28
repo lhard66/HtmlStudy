@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="utf-8">
+  <title>使用seaJS加载jQuery模块</title>
+</head>
+<script src="./node_modules/seajs/dist/sea.js"></script>
+<script>
+// 此处引入的jquery.js文件底部已加入body标签内的说明代码
+//注意：seajs.use的路径，如果不加./可能会报错误
+seajs.use('./node_modules/jquery/dist/jquery.js', function(obj) {
+  console.log(obj);
+});
+</script>
+
+<body>
+  <!-- 使用seajs引入jquery时，需要在jquery最后加入以下代码： -->
+  <!-- 这里判断，如果不是AMD规范，则默认是CMD规范，返回jquery对象 -->
+  <!-- if (typeof define === "function" && !define.amd) {
+	  define(function(require, exports, module) {
+	    module.exports = jQuery.noConflict();
+	  });
+	} -->
+  <!-- 以上代码与以下代码是对应的 -->
+  <!--   if (typeof define === "function" && define.amd) {
+    define("jquery", [], function() {
+      return jQuery;
+    }); -->
+  <!-- 这上面的代码表示，如果引用的是ADM规范，则返回jquery对象。 -->
+</body>
+
+</html>
