@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分类</title>
+  <link rel="stylesheet" href="css/base.css">
+  <style>
+  .topbar {
+    height: 45px;
+    width: 100%;
+    background: url(images/header-bg.png) repeat-x;
+    background-size: 1px 44px;
+    border-bottom: 1px solid #e0e0e0;
+    position: absolute;
+    z-index: 1000;
+  }
+  
+  [class^="icon-"] {
+    background: url(images/sprites.png) no-repeat;
+    background-size: 200px 200px;
+  }
+  
+  .icon-back {
+    background-position: -20px 0;
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: 12px 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .topbar>form {
+    width: 100%;
+    height: 44px;
+    padding: 0 40px;
+  }
+  
+  .topbar>form>input {
+    width: 100%;
+    height: 32px;
+    bottom: 1px solid #bfbfbf;
+    border-radius: 4px;
+    margin-top: 6px;
+  }
+  
+  .topbar>.icon-menu{
+  	background-position: -60px 0;
+  	width: 40px;
+  	height: 44px;
+  	display: block;
+  	padding: 12px 10px;
+  	background-clip: content-box;
+  	background-origin: content-box;
+  	position: absolute;
+  	top: 0;
+  	right: 0;
+  }
+  .category-left{
+  	width: 90px;
+  	height: 100%;
+  	overflow: hidden;
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	padding-top: 45px;
+  	z-index: 999;
+  }
+  .category-left-box{
+  	width: 90px;
+  }
+  .category-left>ul>li{
+  	height: 50px;
+  	width: 90px;
+  	background-color: #f3f4f6;
+  	font-size: 12px;
+  	font-family: sans-serif;
+  }
+  .category-left ul>li>a{
+  	height: 50px;
+  	width: 90px;
+  	display: block;
+  	text-align: center;
+  	line-height: 50;
+  	border-right: 1px solid #e0e0e0;
+  	border-bottom: 1px solid #e0e0e0;
+  }
+  .category-left ul>li>a.now{
+  	background-color: #fff;
+  }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <a href="#" class="icon-back"></a>
+    <form action="#">
+      <input type="search" placeholder="搜索">
+    </form>
+    <a href="#" class="icon-menu"></a>
+  </header>
+  <main class="category">
+	<div class="category-left">
+		<div class="category-left-box">
+			<ul>
+				<li><a href="#">热门推荐</a></li>
+				<li><a href="#">潮流女装</a></li>
+				<li><a href="#">品牌男装</a></li>
+				<li><a href="#">内衣配饰</a></li>
+				<li><a href="#">家用电器</a></li>
+				<li><a href="#">电脑办公</a></li>
+				<li><a href="#">手机数码</a></li>
+				<li><a href="#">母婴频道</a></li>
+				<li><a href="#">图书</a></li>
+				<li><a href="#">家居家纺</a></li>
+				<li><a href="#">居家生活</a></li>
+				<li><a href="#">家具建材</a></li>
+				<li><a href="#">热门推荐</a></li>
+				<li><a href="#">折扣专区</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="category-right">
+		
+	</div>
+  </main>
+</body>
+
+</html>

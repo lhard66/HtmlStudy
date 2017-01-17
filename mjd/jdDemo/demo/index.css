@@ -1,0 +1,287 @@
+
+/*header start*/
+.jd_header{
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top:0;
+    z-index: 9999;
+}
+
+.jd_header .jd_header_box{
+    min-width: 300px;
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+    background: rgba(201,21,35,0.85);
+    height: 40px;
+}
+
+.jd_header_box .icon_logo{
+    height: 36px;
+    width: 60px;
+    background-position: 0 -103px;
+    display: block;
+    margin-top: 4px;
+    position: absolute;
+    top:0;
+    left: 10px;
+}
+.jd_header_box .form{
+    width: 100%;
+    padding-left: 75px;
+    padding-right: 45px;
+}
+.jd_header_box .form .icon_search{
+    height: 20px;
+    width: 20px;
+    background-position: -60px -109px;
+    display: block;
+    margin-top: 10px;
+    position: absolute;
+    top:0;
+    left: 80px;
+}
+
+.jd_header_box .form input{
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 5px;
+    padding-left: 30px;
+}
+
+
+.jd_header_box .login{
+    height: 40px;
+    width: 40px;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 15px;
+    position: absolute;
+    top:0;
+    right: 0;
+}
+/*header end*/
+/*banner start*/
+.jd_banner{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.jd_banner ul:first-child{
+    width: 1000%;
+}
+.jd_banner ul:first-child li{
+    width: 10%;
+    float: left;
+}
+.jd_banner ul:first-child li img{
+    width: 100%;
+    display: block;
+}
+.jd_banner ul:last-child{
+    width: 118px;
+    height: 6px;
+    position: absolute;
+    left: 50%;
+    margin-left: -59px;
+    bottom:5px;
+}
+.jd_banner ul:last-child li{
+    width: 6px;
+    height: 6px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    margin-left: 10px;
+    float: left;
+}
+.jd_banner ul:last-child li:first-child{
+    margin-left: 0;
+}
+/*banner end*/
+/*nav start*/
+.jd_nav{
+    padding-top: 11px;
+    background: #fff;
+    border-bottom: 1px solid #ebebeb;
+}
+.jd_nav ul{
+    width: 100%;
+    padding: 0 3.125%;
+}
+.jd_nav ul li{
+    width: 25%;
+    height: 69px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    float: left;
+}
+.jd_nav ul li img{
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 6px;
+}
+/*nav end*/
+.jd_floor{
+    -webkit-box-shadow: 0 0 1px 1px #ebebeb;
+    -moz-box-shadow: 0 0 1px 1px #ebebeb;
+    box-shadow: 0 0 1px 1px #ebebeb;
+    margin:10px 5px 0 5px;
+    min-height: 32px;
+    background: #fff;
+}
+
+.jd_floor_tit{
+    height: 32px;
+    line-height: 32px;
+
+}
+.jd_floor_tit h3{
+    font-size: 15px;
+    color: #666;
+    font-weight:inherit;
+}
+.jd_floor_tit h3::before{
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 12px;
+    background: #d8505c;
+    margin:0 8px;
+}
+.jd_floor_con{
+    border-top: 1px solid #ebebeb;
+}
+.jd_floor_con.no_bor{
+    border: 0;
+}
+
+.killSecond_icon{
+    background: url("../images/seckill-icon.png") no-repeat;
+    background-size: 16px 20px;
+    height: 20px;
+    width: 16px;
+    display: block;
+    float: left;
+    margin-top: 6px;
+    margin-left: 5px;
+}
+.killSecond_name{
+    font-size: 15px;
+    color: #c91523;
+    padding: 0 5px;
+    float: left;
+}
+.killSecond_time{
+    float: left;
+}
+.killSecond_time .num{
+    height: 16px;
+    width: 15px;
+    line-height: 16px;
+    text-align: center;
+    background: #5d5d5d;
+    color: #fff;
+    margin-left: 2px;
+    margin-top: 8px;
+    float: left;
+}
+.killSecond_time .mao{
+    width: 5px;
+    float: left;
+    margin-left: 2px;
+    text-align: center;
+}
+.killSecond_more{
+    float: right;
+    margin-right: 5px;
+}
+.killSecond_product{
+    margin-top: 7px;
+    padding-bottom: 10px;
+}
+.killSecond_product li{
+    width: 33.3%;
+    border-right: 1px solid #dcdcdc;
+    overflow: hidden;
+    float: left;
+}
+.killSecond_product li:last-child{
+    border-right: 0;
+}
+.killSecond_product li a{
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+.killSecond_product li a img{
+    width: 64%;
+}
+.killSecond_product li a .old_price{
+    color: #f15353;
+    font-size: 12px;
+}
+.killSecond_product li a .new_price{
+    color: #666;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+.big_img_box{
+    padding: 5px;
+    display: block;
+    width: 100%;
+}
+.big_img_box img{
+    width: 100%;
+    display: block;
+}
+
+
+.product_img_box{
+    width: 50%;
+}
+.product_img_box img{
+    width: 100%;
+    display: block;
+}
+.f_left{
+    float: left;
+}
+.f_right{
+    float: right;
+}
+.b_left{
+    border-left: 1px solid #dcdcdc;
+}
+.b_right{
+    border-right: 1px solid #dcdcdc;
+}
+.b_top{
+    border-top: 1px solid #dcdcdc;
+}
+.b_bottom{
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.jd_go_top{
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 15px;
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    background:url("../images/scroll-to-top-icon.png") no-repeat;
+    background-size: 35px 35px;
+}
